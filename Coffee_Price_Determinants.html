@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Price Determinants</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        section { animation: fadeIn 1s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        pre { white-space: pre-wrap; word-wrap: break-word; }
+    </style>
 </head>
 <body>
-    <header class="text-center p-5 bg-light">
+    <header class="container-fluid text-center p-5 bg-light">
         <h1>Coffee Price Determinants</h1>
         <p class="lead">Econometric Analysis Using R</p>
     </header>
 
     <section class="container my-5">
-        <h2 class="mb-4">Project Overview</h2>
+        <h2 class="text-center mb-4">Project Overview</h2>
         <p>
             This project analyzes the key economic determinants of global coffee prices using econometric techniques.
             Using a dataset covering 1994–2022, I applied log-linear regression models, robust standard errors, residual diagnostics,
@@ -22,7 +30,7 @@
     </section>
 
     <section class="container my-5">
-        <h2 class="mb-4">Key Methods & Tools</h2>
+        <h2 class="text-center mb-4">Key Methods & Tools</h2>
         <ul>
             <li>Data cleaning and transformation in R (dplyr, readxl)</li>
             <li>OLS regression with robust standard errors</li>
@@ -32,7 +40,7 @@
     </section>
 
     <section class="container my-5">
-        <h2 class="mb-4">Main Findings</h2>
+        <h2 class="text-center mb-4">Main Findings</h2>
         <ul>
             <li><strong>Significant drivers:</strong> Coffee consumption (+), imports (−), exchange rate (−)</li>
             <li>High R² (~86%) showing strong model fit</li>
@@ -41,23 +49,22 @@
     </section>
    
     <section class="container my-5">
-    <h2 class="mb-4">Residual Diagnostics: Q-Q Plot</h2>
-    <p>This Q-Q plot shows the residual distribution and assesses normality assumptions in the regression model.</p>
-    <img src="Q-Q.png" alt="Q-Q Plot" class="img-fluid rounded mx-auto d-block" style="max-width: 600px;">
-</section>
-
+        <h2 class="text-center mb-4">Residual Diagnostics: Q-Q Plot</h2>
+        <p>This Q-Q plot shows the residual distribution and assesses normality assumptions in the regression model.</p>
+        <img src="Q-Q.png" alt="Q-Q Plot showing residual diagnostics" class="img-fluid rounded mx-auto d-block" style="max-width: 600px;" loading="lazy">
+    </section>
 
     <section class="container my-5">
-        <h2 class="mb-4">Sample Code</h2>
-        <pre style="background-color:#f8f9fa; padding:15px; border-radius:5px;">
+        <h2 class="text-center mb-4">Sample Code</h2>
+        <pre class="bg-light p-3 rounded">
 model <- lm(ln_CoffeePrice ~ ln_CoffeeConsumption + ln_Imports + ln_ExchangeRate + ln_OilPrices, data = data)
 summary(model)
-coeftest(model, vcov = vcovHC(model, type = \"HC1\"))
+coeftest(model, vcov = vcovHC(model, type = "HC1"))
         </pre>
     </section>
 
     <section class="container my-5">
-        <h2 class="mb-4">Takeaways</h2>
+        <h2 class="text-center mb-4">Takeaways</h2>
         <p>
             This project highlights the value of econometric analysis in understanding commodity markets.
             The skills applied—data wrangling, regression modeling, and diagnostics—are highly transferable
@@ -66,12 +73,20 @@ coeftest(model, vcov = vcovHC(model, type = \"HC1\"))
     </section>
 
     <section class="container my-5 text-center">
-        <a href="index.html" class="btn btn-primary">← Back to Portfolio</a>
-        <a href="https://github.com/murbaracho" class="btn btn-dark">View Code on GitHub</a>
+        <a href="index.html" class="btn btn-primary me-2">
+            ← Back to Portfolio
+        </a>
+        <a href="https://github.com/murbaracho" class="btn btn-dark">
+            <i class="bi bi-github"></i> View Code on GitHub
+        </a>
     </section>
 
     <footer class="text-center py-3 bg-primary text-white">
         &copy; 2025 Monica Baracho
     </footer>
+
+    <!-- Bootstrap Icons CDN (optional, for prettier buttons) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
 </body>
 </html>
+
