@@ -63,6 +63,35 @@
 </section>
 
 <section class="container my-5" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Regression Analysis Insights</h2>
+    <p>
+        To complement the dashboard insights, I conducted regression modeling using R to quantify the impact of customer demographics and behavior on spending. 
+        This advanced analysis provided a deeper understanding of the drivers behind purchase patterns.
+    </p>
+    <ul>
+        <li><strong>Significant predictors:</strong> Income (+), Age (+), Marital Status (Married: +, Single: −), Ad exposure (Instagram: +)</li>
+        <li><strong>Model fit:</strong> Adjusted R² = 0.78, indicating strong explanatory power</li>
+        <li><strong>Key insight:</strong> High-income, older married customers exposed to Instagram ads have the highest spend levels</li>
+    </ul>
+    <p>
+        The regression results supported data-driven recommendations for targeted marketing, such as prioritizing Instagram campaigns for premium segments 
+        and tailoring promotions by marital status and income band.
+    </p>
+</section>
+
+<section class="container my-5" data-aos="fade-up">
+    <h3 class="mb-3 text-center">Regression Visualization (R)</h3>
+    <p>
+        This plot, generated in R using the <code>jtools</code> and <code>ggplot2</code> packages, illustrates the effect of different predictors 
+        (such as income, ad channels, and household composition) on total spending. It clearly shows the size and direction of each predictor's 
+        impact, along with confidence intervals.
+    </p>
+    <div class="text-center">
+        <img src="regression_plot.png" class="img-fluid rounded shadow-sm" alt="Effect of Predictors on Total Spending">
+    </div>
+</section>
+
+<section class="container my-5" data-aos="fade-up">
     <h2 class="mb-4 text-center">Dashboard Visuals</h2>
     <div class="row">
         <div class="col-md-4 mb-3" data-aos="zoom-in">
@@ -117,7 +146,7 @@
         <li><strong>Course:</strong> LSE Data Analytics for Business</li>
         <li><strong>Grade:</strong> Distinction (82.22%)</li>
         <li><strong>Tools Used:</strong> R, SQL, Tableau, Excel</li>
-        <li><strong>Skills Applied:</strong> Data cleaning, exploratory analysis, segmentation, dashboard design, insight delivery</li>
+        <li><strong>Skills Applied:</strong> Data cleaning, exploratory analysis, segmentation, regression modeling, dashboard design, insight delivery</li>
         <li><strong>Deliverables:</strong> Report, interactive dashboard, portfolio reflection</li>
     </ul>
 </section>
@@ -155,7 +184,6 @@
         once: true
     });
 
-    // Enable correct slide selection when clicking thumbnails
     document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#dashboardModal"]').forEach((thumb, index) => {
         thumb.addEventListener('click', function () {
             const carouselEl = document.querySelector('#dashboardCarousel');
