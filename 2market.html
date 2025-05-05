@@ -67,15 +67,15 @@
     <div class="row">
         <div class="col-md-4 mb-3" data-aos="zoom-in">
             <img src="Dashboard1.png" class="img-fluid rounded shadow-sm" alt="Dashboard 1"
-                 style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#dashboardModal" data-bs-slide-to="0">
+                 style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#dashboardModal">
         </div>
         <div class="col-md-4 mb-3" data-aos="zoom-in">
             <img src="Dashboard2.png" class="img-fluid rounded shadow-sm" alt="Dashboard 2"
-                 style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#dashboardModal" data-bs-slide-to="1">
+                 style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#dashboardModal">
         </div>
         <div class="col-md-4 mb-3" data-aos="zoom-in">
             <img src="Dashboard3.png" class="img-fluid rounded shadow-sm" alt="Dashboard 3"
-                 style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#dashboardModal" data-bs-slide-to="2">
+                 style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#dashboardModal">
         </div>
     </div>
 </section>
@@ -153,6 +153,15 @@
         duration: 700,
         offset: 150,
         once: true
+    });
+
+    // Enable correct slide selection when clicking thumbnails
+    document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#dashboardModal"]').forEach((thumb, index) => {
+        thumb.addEventListener('click', function () {
+            const carouselEl = document.querySelector('#dashboardCarousel');
+            const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+            carousel.to(index);
+        });
     });
 </script>
 </body>
