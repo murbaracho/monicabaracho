@@ -1,28 +1,49 @@
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
-header {
+.hero {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 60vh;
+    text-align: center;
+    padding: 2rem;
     color: white;
 }
 
-.navbar {
-    background-color: #343a40 !important;
+.hero .btn {
+    background-color: white;
+    color: #2575fc;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.navbar-brand, .nav-link {
-    color: white !important;
+.hero .btn:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+.card {
+    border: none;
+    border-radius: 0.5rem;
 }
 
-.card-img-top {
-    object-fit: cover;
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-weight: bold;
 }
 
 footer {
     background-color: #343a40;
+    color: white;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+html {
+    scroll-behavior: smooth;
 }
