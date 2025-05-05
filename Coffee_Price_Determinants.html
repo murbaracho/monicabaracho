@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Price Determinants</title>
+    <title>Coffee Price Determinants — Monica Baracho</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        section { animation: fadeIn 1s ease; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        pre { white-space: pre-wrap; word-wrap: break-word; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="container-fluid text-center p-5 bg-light">
-        <h1>Coffee Price Determinants</h1>
-        <p class="lead">Econometric Analysis Using R</p>
-    </header>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Project Overview</h2>
+    <!-- Hero Section -->
+    <section class="hero text-center text-white d-flex align-items-center justify-content-center" data-aos="fade-up">
+        <div>
+            <h1 class="display-4 mb-3">Coffee Price Determinants</h1>
+            <p class="lead mb-4">
+                Econometric Analysis Using R and Stata — uncovering the drivers of global coffee prices (1994–2022).
+            </p>
+            <a href="#key-findings" class="btn btn-light btn-lg">Explore Findings ↓</a>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="container my-5" id="overview" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Project Overview</h2>
         <p>
-            This project analyzes the key economic determinants of global coffee prices using econometric techniques.
-            Using a dataset covering 1994–2022, I applied log-linear regression models, robust standard errors, residual diagnostics,
-            and stepwise selection to identify the most influential factors on coffee price dynamics.
+            This project analyzes the key economic determinants of global coffee prices using econometric techniques. 
+            Using a dataset covering 1994–2022, I applied log-linear regression models, robust standard errors, 
+            residual diagnostics, and stepwise selection to identify the most influential factors on coffee price dynamics.
         </p>
     </section>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Key Methods & Tools</h2>
+    <!-- Key Methods & Tools -->
+    <section class="container my-5" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Key Methods & Tools</h2>
         <ul>
             <li>Data cleaning and transformation in R (dplyr, readxl)</li>
             <li>OLS regression with robust standard errors</li>
@@ -39,77 +42,94 @@
         </ul>
     </section>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Main Findings</h2>
+    <!-- Main Findings -->
+    <section class="container my-5" id="key-findings" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Main Findings</h2>
         <ul>
-            <li><strong>Significant drivers:</strong> Coffee consumption (+), imports (−), exchange rate (−)</li>
+            <li>Significant drivers: Coffee consumption (+), imports (−), exchange rate (−)</li>
             <li>High R² (~86%) showing strong model fit</li>
             <li>Residuals approximately normal, no major violations of assumptions</li>
         </ul>
     </section>
-   
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Residual Diagnostics: Q-Q Plot</h2>
-        <p>This Q-Q plot shows the residual distribution and assesses normality assumptions in the regression model.</p>
-        <img src="Q-Q.png" alt="Q-Q Plot showing residual diagnostics" class="img-fluid rounded mx-auto d-block" style="max-width: 600px;" loading="lazy">
+
+    <!-- Storytelling Images -->
+    <section class="container my-5" id="coffee-story" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Storytelling Through Data</h2>
+
+        <div class="card mb-4 shadow-sm" data-aos="fade-right">
+            <div class="card-body">
+                <h5 class="card-title">Global Coffee Price Trends</h5>
+                <p>This figure shows price dynamics across coffee types from 1994 to 2022, highlighting market shocks and price spikes.</p>
+                <img src="Picture1.png" class="img-fluid rounded shadow-sm" alt="Global Coffee Price Trends">
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm" data-aos="fade-left">
+            <div class="card-body">
+                <h5 class="card-title">Production and Consumption Patterns</h5>
+                <p>This figure compares coffee production and consumption over time, showing steady demand growth alongside supply.</p>
+                <img src="Picture2.png" class="img-fluid rounded shadow-sm" alt="Coffee Production and Consumption">
+            </div>
+        </div>
+
+        <div class="card mb-4 shadow-sm" data-aos="fade-right">
+            <div class="card-body">
+                <h5 class="card-title">Methodology and Data Sources</h5>
+                <p>This visual summarizes the data sources, econometric model specifications, key variables, and software used (Stata).</p>
+                <img src="Picture3.png" class="img-fluid rounded shadow-sm" alt="Methodology and Data Sources">
+            </div>
+        </div>
     </section>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Sample Code</h2>
-        <pre class="bg-light p-3 rounded">
-model <- lm(ln_CoffeePrice ~ ln_CoffeeConsumption + ln_Imports + ln_ExchangeRate + ln_OilPrices, data = data)
+    <!-- Sample Code -->
+    <section class="container my-5" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Sample Code (R)</h2>
+        <pre><code>model &lt;- lm(ln_CoffeePrice ~ ln_CoffeeConsumption + ln_Imports + ln_ExchangeRate + ln_OilPrices, data = data)
 summary(model)
-coeftest(model, vcov = vcovHC(model, type = "HC1"))
-        </pre>
+coeftest(model, vcov = vcovHC(model, type = "HC1"))</code></pre>
     </section>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Takeaways</h2>
+    <!-- Takeaways -->
+    <section class="container my-5" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Takeaways</h2>
         <p>
-            This project highlights the value of econometric analysis in understanding commodity markets.
-            The skills applied—data wrangling, regression modeling, and diagnostics—are highly transferable
+            This project highlights the value of econometric analysis in understanding commodity markets. 
+            The skills applied—data wrangling, regression modeling, and diagnostics—are highly transferable 
             to other economic and business contexts.
         </p>
     </section>
 
-    <section class="container my-5 text-center">
-        <a href="index.html" class="btn btn-primary me-2">
+    <!-- Report Contribution -->
+    <section class="container my-5" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Contribution to ICO Report</h2>
+        <p>
+            I also contributed to the International Coffee Organization’s published report:
+            <a href="https://www.icocoffee.org/documents/cy2023-24/report-global-coffee-funding-mechanisms-june-2024-e.pdf" target="_blank">
+                Global Coffee Funding Mechanisms (June 2024)
+            </a>
+        </p>
+    </section>
+
+    <!-- Back to Portfolio -->
+    <section class="text-center my-4" data-aos="zoom-in">
+        <a href="index.html" class="btn btn-outline-primary">
             ← Back to Portfolio
-        </a>
-        <a href="https://github.com/murbaracho" class="btn btn-dark">
-            <i class="bi bi-github"></i> View Code on GitHub
         </a>
     </section>
 
-    <section class="container my-5">
-    <h2 class="mb-4">Additional Contribution: ICO Global Coffee Funding Report</h2>
-    <p>
-        As part of my work on coffee market analysis, I contributed to the
-        <strong>International Coffee Organization (ICO)</strong> report on 
-        <em>“Global Coffee Funding Mechanisms”</em> (June 2024).
-        This report analyzes the global coffee sector, focusing on climate change, income gaps, price volatility, 
-        and market access challenges. It proposes the creation of a global blended finance vehicle to support 
-        sustainability, resilience, and farmer livelihoods across the coffee value chain.
-    </p>
-    <p>
-        Key highlights include the need for $256 million–$1.04 billion per year to improve productivity and address 
-        climate change, the importance of closing income gaps and supporting disadvantaged regions, and innovative 
-        financial solutions combining public, private, and impact investment. The report was presented at the 
-        <em>5th World Coffee Conference</em> and to international leaders and stakeholders.
-    </p>
-    <a href="https://www.icocoffee.org/documents/cy2023-24/report-global-coffee-funding-mechanisms-june-2024-e.pdf" 
-       class="btn btn-outline-secondary" target="_blank" rel="noopener">
-        📄 View Full ICO Report (June 2024)
-    </a>
-</section>
-
-
+    <!-- Footer -->
     <footer class="text-center py-3 bg-primary text-white">
         &copy; 2025 Monica Baracho
     </footer>
 
-    <!-- Bootstrap Icons CDN (optional, for prettier buttons) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+    <!-- AOS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            offset: 150,
+            once: true
+        });
+    </script>
 </body>
 </html>
-
