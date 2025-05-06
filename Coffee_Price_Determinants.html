@@ -1,123 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Price Determinants — Monica Baracho</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Hero Section -->
-    <section class="hero text-center text-white d-flex align-items-center justify-content-center" data-aos="fade-up">
-        <div>
-            <h1 class="display-4 mb-3">Coffee Price Determinants</h1>
-            <p class="lead mb-4">
-                Econometric Analysis Using R and Stata — uncovering the drivers of global coffee prices (1994–2022).
-            </p>
-            <a href="#key-findings" class="btn btn-light btn-lg">Explore Findings ↓</a>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="container my-5" id="overview" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Project Overview</h2>
-        <p>
-            This project analyzes the key economic determinants of global coffee prices using econometric techniques. 
-            Using a dataset covering 1994–2022, I applied log-linear regression models, robust standard errors, 
-            residual diagnostics, and stepwise selection to identify the most influential factors on coffee price dynamics.
+<section class="hero text-center text-white d-flex align-items-center justify-content-center" data-aos="fade-up">
+    <div>
+        <h1 class="display-4 mb-3">Coffee Price Determinants (Updated)</h1>
+        <p class="lead mb-4">
+            Advanced econometric analysis uncovering the key drivers of global coffee prices, 1994–2022.
         </p>
-    </section>
+        <a href="#key-findings" class="btn btn-light btn-lg">Explore New Findings ↓</a>
+    </div>
+</section>
 
-    <!-- Key Methods & Tools -->
-    <section class="container my-5" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Key Methods & Tools</h2>
-        <ul>
-            <li>Data cleaning and transformation in R (dplyr, readxl)</li>
-            <li>OLS regression with robust standard errors</li>
-            <li>Model selection with stepwise AIC</li>
-            <li>Diagnostics: residual plots, Q-Q plots, VIF checks</li>
-        </ul>
-    </section>
+<section class="container my-5" id="overview" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Project Overview</h2>
+    <p>
+        This project investigates the determinants of global coffee prices using advanced regression modeling, 
+        stepwise selection, ANOVA comparisons, and residual diagnostics. The analysis compares models 
+        with and without a time trend (Year) to balance predictive power and interpretability.
+    </p>
+</section>
 
-    <!-- Main Findings -->
-    <section class="container my-5" id="key-findings" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Main Findings</h2>
-        <ul>
-            <li>Significant drivers: Coffee consumption (+), imports (−), exchange rate (−)</li>
-            <li>High R² (~86%) showing strong model fit</li>
-            <li>Residuals approximately normal, no major violations of assumptions</li>
-        </ul>
-    </section>
+<section class="container my-5" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Key Methods & Tools</h2>
+    <ul>
+        <li>Data cleaning and transformation (R: dplyr, readxl)</li>
+        <li>OLS regression and stepwise selection</li>
+        <li>Model diagnostics: ANOVA, residual vs. fitted plots, Q-Q plots</li>
+        <li>Variable importance analysis (relaimpo package)</li>
+    </ul>
+</section>
 
-    <!-- Storytelling Images -->
-    <section class="container my-5" id="coffee-story" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Storytelling Through Data</h2>
+<section class="container my-5" id="key-findings" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Main Findings</h2>
+    <ul>
+        <li>Key drivers: Imports (−), Exchange rate (−), World Population (−), Domestic Consumption (+, borderline)</li>
+        <li>Adding Year significantly improves fit (ANOVA p = 0.022), capturing time trends</li>
+        <li>With Year: R² = 0.87; Without Year: R² = 0.83 → stronger residual stability with Year</li>
+        <li>Residuals approximately normal; Q-Q plots show slight tail deviation but acceptable fit</li>
+    </ul>
+</section>
 
-        <div class="card mb-4 shadow-sm" data-aos="fade-right">
-            <div class="card-body">
-                <h5 class="card-title">Global Coffee Price Trends</h5>
-                <p>This figure shows price dynamics across coffee types from 1994 to 2022, highlighting market shocks and price spikes.</p>
-                <img src="Picture1.png" class="img-fluid rounded shadow-sm" alt="Global Coffee Price Trends">
-            </div>
+<section class="container my-5" id="coffee-story" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Model Diagnostics and Insights</h2>
+
+    <div class="card mb-4 shadow-sm" data-aos="fade-right">
+        <div class="card-body">
+            <h5 class="card-title">Residuals vs. Fitted Plots</h5>
+            <p>These plots compare residual scatter with and without Year. Including Year reduces clustering and improves error spread.</p>
+            <img src="regression.png" class="img-fluid rounded shadow-sm" alt="Residuals vs Fitted Plots">
         </div>
+    </div>
 
-        <div class="card mb-4 shadow-sm" data-aos="fade-left">
-            <div class="card-body">
-                <h5 class="card-title">Production and Consumption Patterns</h5>
-                <p>This figure compares coffee production and consumption over time, showing steady demand growth alongside supply.</p>
-                <img src="Picture2.png" class="img-fluid rounded shadow-sm" alt="Coffee Production and Consumption">
-            </div>
+    <div class="card mb-4 shadow-sm" data-aos="fade-left">
+        <div class="card-body">
+            <h5 class="card-title">Normal Q-Q Plots</h5>
+            <p>Q-Q plots for both models show acceptable normality, with minor tail deviations. Including Year slightly improves residual normality.</p>
+            <img src="regression.2.png" class="img-fluid rounded shadow-sm" alt="Normal Q-Q Plots">
         </div>
+    </div>
+</section>
 
-    <!-- Sample Code -->
-    <section class="container my-5" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Sample Code (R)</h2>
-        <pre><code>model &lt;- lm(ln_CoffeePrice ~ ln_CoffeeConsumption + ln_Imports + ln_ExchangeRate + ln_OilPrices, data = data)
-summary(model)
-coeftest(model, vcov = vcovHC(model, type = "HC1"))</code></pre>
-    </section>
+<section class="container my-5" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Sample Code (R)</h2>
+    <pre><code># Compare models with and without Year
+model_with_year <- lm(`Coffee Price` ~ Year + `Exchange rate` + `World Population` + `Domestic Consumption` + Imports, data = train)
+model_without_year <- lm(`Coffee Price` ~ `Exchange rate` + `World Population` + `Domestic Consumption` + Imports, data = train)
 
-     <!-- Q-Q Plot Section -->
-    <section class="container my-5" id="qq-plot" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Residuals Q-Q Plot</h2>
-        <p>This Q-Q plot visualizes the distribution of residuals to check the normality assumption after running the regression model. The points should align with the straight line if the residuals are normally distributed.</p>
-        <img src="Q-Q.png" class="img-fluid rounded shadow-sm" alt="Q-Q Plot for Residuals">
-    </section>
+# ANOVA comparison
+anova(model_without_year, model_with_year)
 
-    <!-- Report Contribution -->
-    <section class="container my-5" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Contribution to ICO Report</h2>
-        <p>
-            I also contributed to the International Coffee Organization’s published report:
-            <a href="https://www.icocoffee.org/documents/cy2023-24/report-global-coffee-funding-mechanisms-june-2024-e.pdf" target="_blank">
-                Global Coffee Funding Mechanisms (June 2024)
-            </a>
-        </p>
-    </section>
+# Variable importance (relaimpo)
+library(relaimpo)
+calc_relimp(model_with_year, type = "lmg", rela = TRUE)
+    </code></pre>
+</section>
 
-    <!-- Back to Portfolio -->
-    <section class="text-center my-4" data-aos="zoom-in">
-        <a href="index.html" class="btn btn-outline-primary">
-            ← Back to Portfolio
-        </a>
-    </section>
+<section class="container my-5" data-aos="fade-up">
+    <h2 class="mb-4 text-center">Contribution to International Coffee Organization (ICO)</h2>
+    <p>
+        I also contributed to the International Organization's report 
+        <a href="https://www.icocoffee.org/documents/cy2023-24/report-global-coffee-funding-mechanisms-june-2024-e.pdf" target="_blank">
+            International Coffee Organization’s report: Global Coffee Funding Mechanisms (June 2024)
+        </a>.
+    </p>
+</section>
 
-    <!-- Footer -->
-    <footer class="text-center py-3 bg-primary text-white">
-        &copy; 2025 Monica Baracho
-    </footer>
+<section class="text-center my-4" data-aos="zoom-in">
+    <a href="index.html" class="btn btn-outline-primary">
+        ← Back to Portfolio
+    </a>
+</section>
 
-    <!-- AOS Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 700,
-            offset: 150,
-            once: true
-        });
-    </script>
-</body>
-</html>
+<footer class="text-center py-3 bg-primary text-white">
+    &copy; 2025 Monica Baracho
+</footer>
+
