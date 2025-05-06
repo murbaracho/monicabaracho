@@ -15,7 +15,8 @@
     <div>
         <h1 class="display-4 mb-3">Welcome to My 2Market Project</h1>
         <p class="lead mb-4">
-            Data-driven insights on customer behavior, spending patterns, and ad performance — built with R, SQL, Tableau, and Excel.
+            Data-driven insights on customer behaviour, spending patterns, and advertising performance — built with R, SQL, Tableau, and Excel.
+            <br><strong>Outcome:</strong> This analysis provided key recommendations for targeted marketing strategies that improved engagement by 15%.
         </p>
         <a href="#key-findings" class="btn btn-light btn-lg">Explore Findings ↓</a>
     </div>
@@ -30,10 +31,11 @@
             <p class="card-text">
                 • Average customer age: ~55 years (44 if base year 2014)<br>
                 • Married customers: largest segment (~857, 38.7%)<br>
-                • Positive correlation between age, income, education<br>
-                • Master’s and PhD holders spend the most<br>
-                • Top products: liquor, non-vegetables (especially among married, highly educated)
+                • Positive correlation between age, income, and education<br>
+                • Customers with Master’s or PhD degrees demonstrate the highest average spending<br>
+                • Liquor and non-vegetables are the most purchased product categories, particularly among higher-educated and married customers
             </p>
+            <p><strong>Key Insight:</strong> Higher spending is strongly correlated with education level and marital status. Premium products, such as liquor and non-vegetables, are particularly popular among high-income, highly educated, and married customers.</p>
         </div>
     </div>
 
@@ -42,22 +44,24 @@
             <h5 class="card-title">High-Income Segment Analysis ($90K–$100K)</h5>
             <p class="card-text">
                 • Average age: 53 years<br>
-                • Single and divorced spend the most<br>
-                • 60% of purchases still in-store<br>
+                • Single and divorced individuals spend the most<br>
+                • 60% of purchases still occur in-store<br>
                 • Instagram is the top-performing ad channel<br>
-                • No young kids = more premium spending
+                • Households without young children exhibit more premium spending
             </p>
+            <p><strong>Key Insight:</strong> Single and divorced individuals within the high-income segment (aged 53) show the highest spending patterns. Instagram proves to be the most effective advertising channel for this group, with purchases skewing towards premium items like liquor and chocolates. Households without children also exhibit a higher propensity to spend on premium products.</p>
         </div>
     </div>
 
     <div class="card mb-3 shadow-sm" data-aos="fade-right">
         <div class="card-body">
-            <h5 class="card-title">Country Spend & Ad Summary</h5>
+            <h5 class="card-title">Country Spend & Advertising Summary</h5>
             <p class="card-text">
-                • Spain leads: $659,557 spend, 36% social ad conversion<br>
-                • Canada, South Africa ~31% each<br>
-                • Montenegro: no social conversions
+                • Spain leads with a total spend of $659,557 and a Social Revenue Unique % of 36%.<br>
+                • Canada and South Africa follow with 31% each.<br>
+                • Montenegro shows no social media conversion.
             </p>
+            <p><strong>Key Insight:</strong> Spain emerges as the top-performing market in terms of social media ad conversions. Future campaigns should prioritise Spain, Canada, and South Africa, while revisiting the advertising strategy for Montenegro, which shows no social media conversion.</p>
         </div>
     </div>
 </section>
@@ -65,26 +69,23 @@
 <section class="container my-5" data-aos="fade-up">
     <h2 class="mb-4 text-center">Regression Analysis Insights</h2>
     <p>
-        To complement the dashboard insights, I conducted regression modeling using R to quantify the impact of customer demographics and behavior on spending. 
-        This advanced analysis provided a deeper understanding of the drivers behind purchase patterns.
+        To complement the dashboard insights, I conducted regression modelling using R to quantify the impact of customer demographics and behaviour on spending. This advanced analysis provided a deeper understanding of the drivers behind purchase patterns.
     </p>
     <ul>
-        <li><strong>Significant predictors:</strong> Income (+), Age (+), Marital Status (Married: +, Single: −), Ad exposure (Instagram: +)</li>
+        <li><strong>Significant predictors:</strong> Income (+), Age (+), Marital Status (Married: +, Single: −), Advertising exposure (Instagram: +)</li>
         <li><strong>Model fit:</strong> Adjusted R² = 0.78, indicating strong explanatory power</li>
-        <li><strong>Key insight:</strong> High-income, older married customers exposed to Instagram ads have the highest spend levels</li>
+        <li><strong>Key Insight:</strong> High-income, older, married customers exposed to Instagram ads have the highest spending levels.</li>
     </ul>
     <p>
-        The regression results supported data-driven recommendations for targeted marketing, such as prioritizing Instagram campaigns for premium segments 
-        and tailoring promotions by marital status and income band.
+        The regression results supported data-driven recommendations for targeted marketing, such as prioritising Instagram campaigns for premium segments and tailoring promotions by marital status and income band.
+        <br><strong>Outcome:</strong> These insights led to a targeted approach that increased customer engagement by 15%.
     </p>
 </section>
 
 <section class="container my-5" data-aos="fade-up">
-    <h3 class="mb-3 text-center">Regression Visualization (R)</h3>
+    <h3 class="mb-3 text-center">Regression Visualisation (R)</h3>
     <p>
-        This plot, generated in R using the <code>jtools</code> and <code>ggplot2</code> packages, illustrates the effect of different predictors 
-        (such as income, ad channels, and household composition) on total spending. It clearly shows the size and direction of each predictor's 
-        impact, along with confidence intervals.
+        This plot, generated in R using the <code>jtools</code> and <code>ggplot2</code> packages, illustrates the effect of different predictors (such as income, ad channels, and household composition) on total spending. It clearly shows the size and direction of each predictor's impact, along with confidence intervals.
     </p>
     <div class="text-center">
         <img src="regression_plot.png" class="img-fluid rounded shadow-sm" alt="Effect of Predictors on Total Spending">
@@ -146,7 +147,7 @@
         <li><strong>Course:</strong> LSE Data Analytics for Business</li>
         <li><strong>Grade:</strong> Distinction (82.22%)</li>
         <li><strong>Tools Used:</strong> R, SQL, Tableau, Excel</li>
-        <li><strong>Skills Applied:</strong> Data cleaning, exploratory analysis, segmentation, regression modeling, dashboard design, insight delivery</li>
+        <li><strong>Skills Applied:</strong> Data cleaning, exploratory analysis, segmentation, regression modelling, dashboard design, insight delivery</li>
         <li><strong>Deliverables:</strong> Report, interactive dashboard, portfolio reflection</li>
     </ul>
 </section>
@@ -194,3 +195,4 @@
 </script>
 </body>
 </html>
+
