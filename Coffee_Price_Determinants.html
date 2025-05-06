@@ -80,14 +80,11 @@ summary(model)
 coeftest(model, vcov = vcovHC(model, type = "HC1"))</code></pre>
     </section>
 
-    <!-- Takeaways -->
-    <section class="container my-5" data-aos="fade-up">
-        <h2 class="mb-4 text-center">Takeaways</h2>
-        <p>
-            This project highlights the value of econometric analysis in understanding commodity markets. 
-            The skills applied—data wrangling, regression modeling, and diagnostics—are highly transferable 
-            to other economic and business contexts.
-        </p>
+     <!-- Q-Q Plot Section -->
+    <section class="container my-5" id="qq-plot" data-aos="fade-up">
+        <h2 class="mb-4 text-center">Residuals Q-Q Plot</h2>
+        <p>This Q-Q plot visualizes the distribution of residuals to check the normality assumption after running the regression model. The points should align with the straight line if the residuals are normally distributed.</p>
+        <img src="Q-Q.png" class="img-fluid rounded shadow-sm" alt="Q-Q Plot for Residuals">
     </section>
 
     <!-- Report Contribution -->
