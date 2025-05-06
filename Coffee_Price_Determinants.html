@@ -1,80 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Price Determinants — Monica Baracho</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Price Determinants — Monica Baracho</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Hero Section -->
 <section class="hero text-center text-white d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #6f42c1, #6610f2); height: 100vh;" data-aos="fade-up">
-    <div>
-        <h1 class="display-4 mb-3">Coffee Price Determinants</h1>
-        <p class="lead mb-4">Advanced econometric analysis, 1994–2022</p>
-        <a href="#overview" class="btn btn-light btn-lg">Explore the Analysis ↓</a>
-    </div>
+  <div>
+    <h1 class="display-4 mb-3">Coffee Price Determinants</h1>
+    <p class="lead mb-4">Advanced econometric analysis, 1994–2022</p>
+    <a href="#overview" class="btn btn-light btn-lg">Explore the Analysis ↓</a>
+  </div>
 </section>
 
-<!-- Project Overview -->
+<!-- Overview Section -->
 <section class="container my-5" id="overview" data-aos="fade-up">
-    <h2 class="mb-4 text-center">Project Overview</h2>
-    <ul>
-        <li>Dataset: 1994–2022, 29 years, 13 variables</li>
-        <li>Goal: Identify key drivers of global coffee prices</li>
-        <li>Tools: R, tidyverse, lm(), stepwise AIC, ANOVA, relaimpo</li>
-    </ul>
+  <h2 class="mb-4 text-center">Project Overview</h2>
+  <ul>
+    <li>Dataset: 1994–2022, 29 years, 13 variables</li>
+    <li>Goal: Identify key drivers of global coffee prices</li>
+    <li>Tools: R, tidyverse, lm(), stepwise AIC, ANOVA, relaimpo</li>
+  </ul>
 </section>
 
-<!-- Key Methods & Tools -->
-<section class="container my-5" data-aos="fade-up">
-    <h2 class="mb-4 text-center">Key Methods & Tools</h2>
-    <ul>
-        <li>OLS regression and stepwise selection</li>
-        <li>ANOVA model comparison</li>
-        <li>Residuals vs. fitted plots and Q-Q plots</li>
-        <li>Variable importance analysis (relaimpo package)</li>
-    </ul>
-</section>
-
-<!-- Main Findings -->
+<!-- Key Findings Section -->
 <section class="container my-5" id="key-findings" data-aos="fade-up">
-    <h2 class="mb-4 text-center">Key Findings</h2>
-    <ul>
-        <li>Top drivers: Imports (−), Exchange rate (−), World Population (−), Domestic Consumption (+, borderline)</li>
-        <li>Adding Year improves fit (ANOVA p = 0.022), capturing time trends</li>
-        <li>With Year: R² = 0.87; Without Year: R² = 0.83 → stronger residual stability with Year</li>
-    </ul>
+  <h2 class="mb-4 text-center">Key Findings</h2>
+  <ul>
+    <li>Top drivers: Imports (−), Exchange rate (−), World Population (−), Domestic Consumption (+, borderline)</li>
+    <li>Adding Year improves fit (ANOVA p = 0.022), capturing time trends</li>
+    <li>With Year: R² = 0.87; Without Year: R² = 0.83 → stronger residual stability with Year</li>
+  </ul>
 </section>
 
-<!-- Visual Storytelling -->
+<!-- Visual Storytelling with Modal -->
 <section class="container my-5" id="visuals" data-aos="fade-up">
-    <h2 class="mb-4 text-center">Model Diagnostics and Visuals</h2>
+  <h2 class="mb-4 text-center">Model Diagnostics and Visuals</h2>
 
-    <div class="card mb-4 shadow-sm" data-aos="fade-right">
-        <div class="card-body">
-            <h5 class="card-title">Residuals vs. Fitted Plots</h5>
-            <p>Including Year reduces clustering and improves error spread.</p>
-            <img src="regression.png" class="img-fluid rounded shadow-sm" alt="Residuals vs Fitted Plots">
-        </div>
+  <div class="row">
+    <div class="col-md-6 mb-4" data-aos="fade-right">
+      <img src="regression.png" class="img-fluid rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#visualModal" data-index="0" alt="Residuals Plot">
     </div>
-
-    <div class="card mb-4 shadow-sm" data-aos="fade-left">
-        <div class="card-body">
-            <h5 class="card-title">Normal Q-Q Plots</h5>
-            <p>Q-Q plots show acceptable normality, with minor tail deviations.</p>
-            <img src="regression.2.png" class="img-fluid rounded shadow-sm" alt="Normal Q-Q Plots">
-        </div>
+    <div class="col-md-6 mb-4" data-aos="fade-left">
+      <img src="regression.2.png" class="img-fluid rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#visualModal" data-index="1" alt="Q-Q Plot">
     </div>
+  </div>
 </section>
+
+<!-- Bootstrap Modal with Carousel -->
+<div class="modal fade" id="visualModal" tabindex="-1" aria-labelledby="visualModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="visualCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="regression.png" class="d-block w-100" alt="Residuals Plot">
+            </div>
+            <div class="carousel-item">
+              <img src="regression.2.png" class="d-block w-100" alt="Q-Q Plot">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#visualCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#visualCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Sample Code -->
 <section class="container my-5" data-aos="fade-up">
-    <h2 class="mb-4 text-center">Sample Code (R)</h2>
-    <pre><code># Compare models
+  <h2 class="mb-4 text-center">Sample Code (R)</h2>
+  <pre><code># Compare models
 model_with_year <- lm(`Coffee Price` ~ Year + `Exchange rate` + `World Population` + `Domestic Consumption` + Imports, data = train)
 model_without_year <- lm(`Coffee Price` ~ `Exchange rate` + `World Population` + `Domestic Consumption` + Imports, data = train)
 
@@ -84,37 +92,46 @@ anova(model_without_year, model_with_year)
 # Variable importance
 library(relaimpo)
 calc_relimp(model_with_year, type = "lmg", rela = TRUE)
-    </code></pre>
+  </code></pre>
 </section>
 
 <!-- ICO Contribution -->
 <section class="container my-5" data-aos="fade-up">
-    <h2 class="mb-4 text-center">Contribution to International Coffee Organization (ICO)</h2>
-    <p>
-        This project contributed to the 
-        <a href="https://www.icocoffee.org/documents/cy2023-24/report-global-coffee-funding-mechanisms-june-2024-e.pdf" target="_blank">
-        ICO Global Coffee Funding Mechanisms report (June 2024)</a>,
-        providing econometric insights on market dynamics and price drivers.
-    </p>
+  <h2 class="mb-4 text-center">Contribution to International Coffee Organization (ICO)</h2>
+  <p>
+    This project contributed to the 
+    <a href="https://www.icocoffee.org/documents/cy2023-24/report-global-coffee-funding-mechanisms-june-2024-e.pdf" target="_blank">
+    ICO Global Coffee Funding Mechanisms report (June 2024)</a>,
+    providing econometric insights on market dynamics and price drivers.
+  </p>
 </section>
 
 <!-- Back to Portfolio -->
 <section class="text-center my-4" data-aos="zoom-in">
-    <a href="index.html" class="btn btn-outline-primary">← Back to Portfolio</a>
+  <a href="index.html" class="btn btn-outline-primary">← Back to Portfolio</a>
 </section>
 
 <!-- Footer -->
 <footer class="text-center py-3 bg-dark text-white">
-    &copy; 2025 Monica Baracho | <a href="https://github.com/murbaracho" class="text-white">GitHub</a>
+  &copy; 2025 Monica Baracho | <a href="https://github.com/murbaracho" class="text-white">GitHub</a>
 </footer>
 
 <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init({
-        duration: 700,
-        offset: 150,
-        once: true
+  AOS.init({ duration: 700, offset: 150, once: true });
+
+  document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#visualModal"]').forEach((thumb, index) => {
+    thumb.addEventListener('click', function () {
+      const carouselEl = document.querySelector('#visualCarousel');
+      const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+      carousel.to(index);
     });
+  });
 </script>
+
+</body>
+</html>
+
 
