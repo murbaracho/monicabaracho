@@ -62,3 +62,19 @@
 </body>
 </html>
 
+AOS.init({
+        duration: 700,
+        offset: 150,
+        once: true
+    });
+
+    document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#dashboardModal"]').forEach((thumb, index) => {
+        thumb.addEventListener('click', function () {
+            const carouselEl = document.querySelector('#dashboardCarousel');
+            const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+            carousel.to(index);
+        });
+    });
+</script>
+</body>
+</html>
