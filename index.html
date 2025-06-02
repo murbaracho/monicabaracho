@@ -1,87 +1,126 @@
-<section id="projects" class="container my-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monica Baracho Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="text-center p-5 bg-light">
+    <img src="monica.jpg" alt="Monica Baracho" class="rounded-circle mb-3" width="200">
+    <h1>Monica Baracho</h1>
+    <p class="lead">Economist & Data Analyst | Turning data into insight</p>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Portfolio</a>
+      <div>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="about" class="container my-5">
+    <h2 class="text-center mb-4">About Me</h2>
+    <p class="text-center">
+      Hi, I’m Monica Baracho — an economist and data analyst passionate about uncovering insights from data, building models, and supporting smart decisions. With experience in international trade, marketing analytics, and economic research, I bring a unique mix of analytical and communication skills to every project.
+    </p>
+    <p class="text-center">
+      I’m skilled in R, Python, SQL, Excel, Tableau, STATA, and Power BI, and I’m always eager to tackle complex challenges and deliver actionable insights. Explore my projects below!
+    </p>
+  </section>
+
+  <section id="projects" class="container my-5">
   <h2 class="text-center mb-4">Projects</h2>
 
   <div class="row g-4">
 
-    <!-- 2Market -->
+    <!-- Project 1: 2Market -->
     <div class="col-md-6">
-      <div class="card h-100">
+      <div class="card h-100 shadow-sm">
         <img src="2Market.jpg" class="card-img-top" alt="2Market Project Cover" style="height: 300px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title">2Market: Customer Purchase Behaviour</h3>
           <p class="card-text">
-            <strong>Challenge:</strong> Understand the factors influencing customer purchase behavior.<br>
-            <strong>Tools Used:</strong> Excel, R, SQL, Tableau.<br>
-            <strong>Actions Taken:</strong> Analysed trends in customer demographics and purchase patterns, developed predictive models.<br>
-            <strong>Results:</strong> Uncovered strong links between income, education and purchase behavior, supporting targeting strategies.
+            <strong>Challenge:</strong> Identify key drivers of customer purchasing behavior.<br>
+            <strong>Tools Used:</strong> R, SQL, Excel, Tableau.<br>
+            <strong>Actions Taken:</strong> Analyzed customer demographics, channel performance, and ad impact. Built predictive models to forecast behavior and identify high-conversion groups.<br>
+            <strong>Results:</strong> Revealed income and education as key drivers. Delivered actionable targeting insights for campaign optimization.
           </p>
           <a href="2market.html" class="btn btn-primary mt-auto">View Project</a>
         </div>
       </div>
     </div>
 
-    <!-- NHS -->
+    <!-- Project 2: NHS -->
     <div class="col-md-6">
-      <div class="card h-100">
+      <div class="card h-100 shadow-sm">
         <img src="NHS.png" class="card-img-top" alt="NHS Resource Utilization" style="height: 300px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title">NHS Service Utilisation Analysis</h3>
           <p class="card-text">
-            <strong>Challenge:</strong> Analyse NHS appointment capacity and missed appointments.<br>
-            <strong>Tools Used:</strong> Python, Logistic Regression, VADER, Matplotlib.<br>
-            <strong>Actions Taken:</strong> Modeled DNA risks and regional inequality, visualised sentiment trends.<br>
-            <strong>Results:</strong> Recommended staffing reallocation and reminder systems to reduce missed bookings and improve care delivery.
+            <strong>Challenge:</strong> Investigate NHS appointment trends, capacity strain, and missed appointments.<br>
+            <strong>Tools Used:</strong> Python, Pandas, Logistic Regression, VADER.<br>
+            <strong>Actions Taken:</strong> Analyzed internal NHS datasets and Twitter sentiment. Modeled missed appointment risk (DNA) and capacity overuse.<br>
+            <strong>Results:</strong> Highlighted 115% avg. utilisation and 4.7% missed slots. Recommended smarter rostering and sentiment-based response strategies.
           </p>
           <a href="nhs-resource.html" class="btn btn-primary mt-auto">View Project</a>
         </div>
       </div>
     </div>
 
-    <!-- Dissertation -->
+    <!-- Project 3: Dissertation -->
     <div class="col-md-6">
-      <div class="card h-100">
+      <div class="card h-100 shadow-sm">
         <img src="dissertation.jpg" class="card-img-top" alt="Dissertation Project" style="height: 300px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title">Dissertation: Mercosur & Brazil Trade</h3>
           <p class="card-text">
-            <strong>Challenge:</strong> Assess the impact of Mercosur on Brazil’s trade flows.<br>
-            <strong>Tools Used:</strong> Gravity Model, Panel Data Econometrics.<br>
-            <strong>Actions Taken:</strong> Applied econometric models to trade data between Mercosur countries.<br>
-            <strong>Results:</strong> Identified key trade drivers supporting policy recommendations for regional integration.
+            <strong>Challenge:</strong> Evaluate the impact of Mercosur membership on Brazil's trade flows.<br>
+            <strong>Tools Used:</strong> Stata, Gravity Model, Panel Data Econometrics.<br>
+            <strong>Actions Taken:</strong> Built and estimated a panel model with bilateral trade data and policy controls.<br>
+            <strong>Results:</strong> Found increased trade intensity with Mercosur countries. Provided policy insights for trade bloc strategy.
           </p>
           <a href="dissertation.html" class="btn btn-primary mt-auto">View Project</a>
         </div>
       </div>
     </div>
 
-    <!-- Coffee -->
+    <!-- Project 4: Coffee Prices -->
     <div class="col-md-6">
-      <div class="card h-100">
+      <div class="card h-100 shadow-sm">
         <img src="coffee.jpg" class="card-img-top" alt="Coffee Price Determinants Project" style="height: 300px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title">Coffee Price Determinants</h3>
           <p class="card-text">
-            <strong>Challenge:</strong> Understand the global drivers of coffee price volatility.<br>
-            <strong>Tools Used:</strong> R, Robust Regression.<br>
-            <strong>Actions Taken:</strong> Modeled relationships between imports, oil prices, currency values, and coffee prices.<br>
-            <strong>Results:</strong> Built predictive models for pricing strategy and market forecasting.
+            <strong>Challenge:</strong> Identify macroeconomic drivers of coffee price volatility.<br>
+            <strong>Tools Used:</strong> R, Regression Modeling, Data Wrangling.<br>
+            <strong>Actions Taken:</strong> Modeled monthly price variation against oil prices, currency strength, and global imports.<br>
+            <strong>Results:</strong> Highlighted oil and FX rates as key predictors. Suggested real-time data use for better forecasting.
           </p>
           <a href="Coffee_Price_Determinants.html" class="btn btn-primary mt-auto">View Project</a>
         </div>
       </div>
     </div>
 
-    <!-- Brazil Trade Dashboard -->
+    <!-- Project 5: Brazil Dashboard -->
     <div class="col-md-6">
-      <div class="card h-100">
+      <div class="card h-100 shadow-sm">
         <img src="Brazilian-agribusiness.jpg" class="card-img-top" alt="Brazil Trade Dashboard" style="height: 300px; object-fit: cover;">
         <div class="card-body d-flex flex-column">
           <h3 class="card-title">Brazil Trade Dashboard</h3>
           <p class="card-text">
-            <strong>Challenge:</strong> Track Brazilian export performance and economic indicators.<br>
-            <strong>Tools Used:</strong> Python, Plotly Dash.<br>
-            <strong>Actions Taken:</strong> Created an interactive dashboard to visualise trade and economic trends.<br>
-            <strong>Results:</strong> Enabled stakeholders to explore trade flows and commodity dynamics interactively.
+            <strong>Challenge:</strong> Create a live tool to monitor Brazil’s trade and economic performance.<br>
+            <strong>Tools Used:</strong> Python, Plotly, Dash.<br>
+            <strong>Actions Taken:</strong> Built a multi-page interactive dashboard using trade, inflation, and commodity datasets.<br>
+            <strong>Results:</strong> Enabled dynamic exploration of trade partners and sectors. Used by stakeholders to monitor export trends.
           </p>
           <a href="brazil-dashboard.html" class="btn btn-primary mt-auto">View Project</a>
         </div>
@@ -91,5 +130,17 @@
   </div>
 </section>
 
+<section id="contact" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact</h2>
+    <p class="text-center">Email: monicaurquizabaracho@gmail.com</p>
+    <p class="text-center">
+      <a href="https://www.linkedin.com/in/monica-baracho-2735b0a8/" class="btn btn-outline-primary me-2">LinkedIn</a>
+      <a href="https://github.com/murbaracho" class="btn btn-outline-dark">GitHub</a>
+    </p>
+  </div>
+</section>
 
-
+<footer class="text-center py-3 bg-primary text-white">
+  &copy; 2025 Monica Baracho
+</footer>
