@@ -9,87 +9,51 @@
 </head>
 <body>
   <div class="container py-5">
-    <h1 class="text-center mb-4">NHS Resource Utilisation & Missed Appointments</h1>
-    <p class="lead text-center">Data-driven insights into demand, missed appointments, and public sentiment</p>
+    <h1 class="text-center mb-4"> NHS Resource Utilisation & Missed Appointments</h1>
+    <p class="lead text-center">
+      Data-driven insights into demand, missed appointments, and public sentiment.<br>
+      <em>This project was completed as part of the LSE DA201: Diagnostic Analytics with Python course.</em>
+    </p>
 
     <section class="my-5">
-      <h2> Overview</h2>
-      <p>This project explores 30 months of GP appointment data from NHS England. Using structured appointment data and external Twitter data, the analysis uncovers trends, system bottlenecks, and missed appointment risks, guiding future NHS capacity and communication strategies.</p>
-    </section>
-
-    <section class="my-5">
-      <h2> Challenge</h2>
-      <p>The NHS faces mounting pressure from increased demand and missed appointments. We sought to answer:</p>
-      <ul>
-        <li>Has capacity kept pace with demand?</li>
-        <li>What predicts missed appointments?</li>
-        <li>What does public sentiment reveal about service perception?</li>
-      </ul>
-    </section>
-
-    <section class="my-5">
-      <h2> Tools Used</h2>
-      <p><strong>Python:</strong> Pandas, Seaborn, Scikit-learn, Matplotlib<br>
-         <strong>Natural Language:</strong> VADER for sentiment analysis<br>
-         <strong>Environment:</strong> Jupyter Notebook, GitHub, HTML export</p>
-    </section>
-
-    <section class="my-5">
-      <h2> Actions Taken</h2>
-      <ul>
-        <li>Explored and visualised appointment trends by region, type, and duration</li>
-        <li>Modelled DNA risk using logistic regression</li>
-        <li>Mapped overutilised vs underutilised ICBs</li>
-        <li>Analysed Twitter hashtags and sentiment using VADER</li>
-      </ul>
-    </section>
-
-    <section class="my-5">
-      <h2> Visual Highlights</h2>
-      <div class="my-4">
-        <h5> KPI Summary (Aug 2021 – Jun 2022)</h5>
-        <img src="Dashboard_KPI.png" class="img-fluid rounded border" alt="KPI Dashboard">
-      </div>
-      <div class="my-4">
-        <h5> Capacity Utilisation vs Planning Limit</h5>
-        <img src="Dashboard_Capacity.png" class="img-fluid rounded border" alt="Capacity Utilisation Chart">
-      </div>
-      <div class="my-4">
-        <h5> Monthly Missed Appointments</h5>
-        <img src="Dashboard_Missed.png" class="img-fluid rounded border" alt="Missed Appointments Chart">
-      </div>
-      <div class="my-4">
-        <h5>💬 Twitter Hashtag Trends</h5>
-        <img src="Dashboard_Twitter.png" class="img-fluid rounded border" alt="Top NHS Twitter Hashtags">
+      <h2> Executive Summary</h2>
+      <div class="card p-4 shadow-sm">
+        <p><strong>Why this matters</strong></p>
+        <ul>
+          <li>GP demand now averages <strong>25.8M appointments/month</strong> – 15% above pre-COVID levels</li>
+          <li>Clinics operate at <strong>115% of planned capacity</strong> – no slack for shocks</li>
+          <li><strong>4.7% of capacity is lost</strong> to missed appointments (DNA), mainly from short-notice and remote bookings</li>
+        </ul>
+        <p><strong>Board-level actions:</strong></p>
+        <ol>
+          <li><strong>Target DNA hotspots</strong> – SMS reminders for bookings ≤ 7 days</li>
+          <li><strong>Rebalance staffing</strong> – Shift resources to high-demand ICBs and manage seasonal peaks</li>
+          <li><strong>Monitor sentiment</strong> – Track hashtags like #NHSCrisis and #ThankYouNHS weekly</li>
+        </ol>
       </div>
     </section>
 
     <section class="my-5">
-      <h2> Insights</h2>
-      <ul>
-        <li><strong>Overcapacity:</strong> NHS ran above 110% capacity on average</li>
-        <li><strong>Missed Appointments:</strong> Driven by short booking windows and remote formats</li>
-        <li><strong>Regional Inequality:</strong> Urban ICBs had less access per capita than rural ones</li>
-        <li><strong>Public Sentiment:</strong> Focused on #job, #digitalhealth, #nhscrisis</li>
-      </ul>
+      <h2> Dashboard Highlights</h2>
+
+      <h5 class="mt-4">KPIs Overview</h5>
+      <img src="Dashboard_KPI.png" class="img-fluid rounded border mb-4" alt="KPI Dashboard">
+
+      <h5>Capacity Utilisation vs Planning Limit</h5>
+      <img src="Dashboard_Capacity.png" class="img-fluid rounded border mb-4" alt="Capacity Chart">
+
+      <h5>Missed Appointments Trends</h5>
+      <img src="Dashboard_Missed.png" class="img-fluid rounded border mb-4" alt="Missed Appointments Chart">
+
+      <h5>Public Sentiment – Twitter Hashtags</h5>
+      <img src="Dashboard_Twitter.png" class="img-fluid rounded border mb-4" alt="Twitter Hashtags">
     </section>
 
     <section class="my-5">
-      <h2>💡 Recommendations</h2>
-      <ul>
-        <li>🔔 Send automated reminders for short-notice bookings</li>
-        <li>🧑‍⚕️ Expand locum pools and dynamic staffing for high-volume months</li>
-        <li>📍 Direct funding to underserved urban regions</li>
-        <li>📊 Improve metadata (e.g. patient profiles) for predictive models</li>
-        <li>📡 Track Twitter sentiment weekly to spot reputational risks</li>
-      </ul>
-    </section>
-
-    <section class="my-5">
-      <h2>📘 View Full Notebook (Live Preview)</h2>
+      <h2> Live HTML Notebook Preview</h2>
       <iframe src="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" width="100%" height="700" style="border:1px solid #ccc;"></iframe>
       <p class="mt-3">
-        <a href="Baracho_Monica_DA201_Assignment_Repor.pdf" target="_blank" class="btn btn-outline-primary me-2">📄 Download Full Report (PDF)</a>
+        <a href="Baracho_Monica_DA201_Assignment_Report.pdf" target="_blank" class="btn btn-outline-primary me-2">📄 Download Full Report (PDF)</a>
         <a href="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" target="_blank" class="btn btn-outline-success">🌐 Open Notebook in New Tab</a>
       </p>
     </section>
@@ -100,5 +64,3 @@
   </div>
 </body>
 </html>
-
-
