@@ -1,18 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NHS Resource Utilization</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NHS GP Appointments Analysis</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9fc;
+      color: #003087;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #005eb8;
+      color: white;
+      padding: 2em;
+      text-align: center;
+    }
+    section {
+      padding: 2em;
+      max-width: 960px;
+      margin: auto;
+    }
+    h2 {
+      color: #005eb8;
+      margin-top: 1.5em;
+    }
+    img {
+      width: 100%;
+      border: 1px solid #ccc;
+      margin: 1em 0;
+    }
+    a {
+      color: #0072ce;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    ul {
+      line-height: 1.7;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: 1px solid #ccc;
+      margin-top: 1em;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background-color: #e5eff7;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>NHS Resource Utilization</h1>
-    </header>
-    <section>
-        <p>Analysed NHS appointment data to reduce missed appointments and improve resource use with Python and Power BI.</p>
-        <p><strong>Coming soon: Interactive dashboards and results!</strong></p>
-        <p><a href="index.html">← Back to Portfolio</a></p>
-    </section>
+
+  <header>
+    <h1>NHS GP Appointments Intelligence Hub</h1>
+    <p><em>Diagnostic Analytics Project by Monica Baracho – LSE DA201</em></p>
+  </header>
+
+  <section>
+    <h2>📄 Final Deliverables</h2>
+    <ul>
+      <li><a href="Baracho_Monica_DA201_Assignment_Report.pdf" target="_blank">Full Report (PDF)</a></li>
+      <li><a href="Baracho_Monica_DA201_Assignment_Notebook.ipynb" target="_blank">Jupyter Notebook (.ipynb)</a></li>
+      <li><a href="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" target="_blank">Rendered Notebook (.html)</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📊 Dashboard Highlights</h2>
+
+    <h3>KPIs Overview</h3>
+    <img src="Dashboard_KPI.png" alt="Dashboard showing NHS KPIs" />
+
+    <h3>Capacity Utilisation vs Planning Limit</h3>
+    <img src="Dashboard_Capacity.png" alt="Dashboard showing NHS capacity utilisation over 100%" />
+
+    <h3>Monthly Missed Appointments</h3>
+    <img src="Dashboard_Missed.png" alt="Dashboard showing DNA volume and percentage trends" />
+
+    <h3>Top 10 NHS-Related Hashtags (Twitter Sentiment)</h3>
+    <img src="Dashboard_Twitter.png" alt="Word cloud and frequency bar chart of NHS hashtags" />
+  </section>
+
+  <section>
+    <h2>Summary of Insights</h2>
+    <ul>
+      <li> NHS activity surpassed 25M appointments/month after lockdown, peaking in Nov 2021.</li>
+      <li>⚠Capacity exceeded 110% most months — October reached 120%.</li>
+      <li>Missed appointments were linked to short-notice and remote bookings (e.g., same-day telephone slots).</li>
+      <li>Regional inequality: Cornwall outperforms in per capita access; South East London lags.</li>
+      <li> Twitter sentiment reveals public concern around digital care and workforce pressure (#digitalhealth, #job).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Recommendations</h2>
+    <ul>
+      <li> Use SMS/app reminders for short-notice bookings to reduce no-shows.</li>
+      <li>Implement dynamic rostering and temporary staffing to buffer peak periods.</li>
+      <li>Expand tele-consult hubs and redistribute staff to underserved urban ICBs.</li>
+      <li>Improve data collection on patient demographics to refine predictive analytics.</li>
+      <li>Monitor NHS-related hashtags weekly to guide communication strategies.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Live HTML Notebook Preview</h2>
+    <iframe src="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html"></iframe>
+  </section>
+
+  <footer>
+    <p><a href="index.html">⬅ Back to Portfolio Home</a></p>
+  </footer>
+
 </body>
 </html>
