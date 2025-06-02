@@ -73,6 +73,57 @@
     Monthly missed appointments (DNAs) ranged between 4.2% and 5.18%, with an October 2021 spike of over 1.5 million no-shows. Logistic regression confirmed that short-notice bookings (especially same-day) and remote formats like telephone/video were the strongest predictors of DNA risk.
   </p>
 
+     <section class="my-5">
+  <h2>📈 Appointment Volume by Season</h2>
+
+  <p>
+    Seasonal variation plays a significant role in NHS service pressure. The bar charts below compare total and average 
+    monthly appointments by season across the dataset timeframe (Aug 2021–Jun 2022).
+  </p>
+
+  <img src="Dashboard_Volume.png" alt="Seasonal Appointment Volume" class="img-fluid rounded border mb-3">
+
+  <p class="text-muted fst-italic">
+    Autumn and Winter had the highest appointment volumes, with Autumn peaking at nearly 90 million. This aligns with post-lockdown recovery 
+    and seasonal illness trends. June and August, as standalone months, saw noticeably lower volume, consistent with holiday effects.
+  </p>
+</section>
+
+<section class="my-5">
+  <h2>🧠 Predicting Missed Appointments</h2>
+
+  <p>
+    To better understand what increases the likelihood of missed appointments (DNA), I trained a logistic regression model 
+    using post-lockdown appointment data. The chart below shows the odds ratios for various predictors.
+  </p>
+
+  <img src="Dashboard_Regression.png" alt="Logistic Regression Odds Ratios" class="img-fluid rounded border mb-3">
+
+  <p class="text-muted fst-italic">
+    This analysis revealed that telephone and video/online appointments had a significantly higher likelihood of being missed, 
+    compared to face-to-face. Weekday and lead time (days_before_appointment) also influenced DNA risk. The model's AUC score was 0.569, 
+    suggesting moderate predictive power. These insights can support targeted interventions like reminders for short-notice or remote bookings.
+  </p>
+</section>
+
+<section class="my-5">
+  <h2>📢 Public Sentiment from Twitter</h2>
+
+  <p>
+    In addition to internal NHS data, Twitter posts mentioning NHS-related keywords were analyzed using sentiment scoring 
+    and hashtag frequency. This helped contextualize public discourse around healthcare access and perception.
+  </p>
+
+  <img src="Dashboard_Twitter.png" alt="NHS Twitter Sentiment and Hashtags" class="img-fluid rounded border mb-3">
+
+  <p class="text-muted fst-italic">
+    Tweets revealed dominant hashtags like #NHSCrisis and #ThankYouNHS. Sentiment scores showed more neutral-to-negative tone 
+    during winter service strain and political events. Integrating social sentiment offers an early-warning signal 
+    for public trust shifts and communication planning.
+  </p>
+</section>
+
+
   <h5>Public Sentiment – Twitter Hashtags</h5>
   <img src="Dashboard_Twitter.png" class="img-fluid rounded border mb-2" alt="Twitter Hashtags">
   <p class="text-muted fst-italic">
