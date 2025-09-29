@@ -1,124 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turtle Games Loyalty & Segmentation — LSE DA301 Project | Monica Baracho</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turtle Games – Loyalty & Segmentation Analysis</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container py-5">
 
-<!-- Hero -->
-<section class="hero text-center text-white d-flex align-items-center justify-content-center" data-aos="fade-up">
-  <div>
-    <h1 class="display-4 mb-3">Turtle Games: Loyalty & Segmentation</h1>
-    <p class="lead mb-4">
-      Predictive modelling, clustering, and sentiment analysis on 2,000+ customers and reviews — built with Python, R, and NLP.
+    <!-- Page Header -->
+    <h1 class="text-center mb-4">Turtle Games – Loyalty & Segmentation Analysis</h1>
+    <p class="lead text-center">
+      Predictive modelling, segmentation, and sentiment analysis on 2,000 customers and reviews.<br>
+      <em>This project was completed as part of the LSE DA301: Advanced Analytics for Business course.</em>
     </p>
-    <a href="#findings" class="btn btn-light btn-lg">Explore Findings ↓</a>
-  </div>
-</section>
+    <p class="text-center mt-2"><strong>Final Score:</strong> 
+      <span style="background-color: #4CAF50; color: white; padding: 4px 10px; border-radius: 6px;">Distinction</span>
+    </p>
 
-<!-- Key Findings -->
-<section class="container my-5" id="findings" data-aos="fade-up">
-  <h2 class="mb-4 text-center">Key Findings</h2>
-  <div class="card mb-3 shadow-sm" data-aos="fade-right">
-    <div class="card-body">
-      <h5 class="card-title">What Drives Loyalty?</h5>
-      <p class="card-text">
-        • Spending score is the strongest predictor of loyalty (β ≈ 34).<br>
-        • Mid-income customers (£50–70k) show the highest loyalty engagement.<br>
-        • Income effect plateaus after £70k — diminishing returns on loyalty.<br>
-        • Age contributes modestly; gender and education add no predictive lift.
+    <!-- Executive Summary -->
+    <section class="my-5">
+      <h2>Executive Summary</h2>
+      <div class="card p-4 shadow-sm">
+        <p><strong>Why this matters</strong></p>
+        <ul>
+          <li><strong>Spending score</strong> is the strongest driver of loyalty (β ≈ 34).</li>
+          <li><strong>Mid-income customers (£50–70k)</strong> show the highest loyalty engagement.</li>
+          <li>Income effect plateaus after £70k → diminishing returns on loyalty.</li>
+          <li>Sentiment analysis shows mostly positive reviews (avg polarity +0.12) but flags issues with rules and product quality.</li>
+        </ul>
+        <p><strong>Board-level actions:</strong></p>
+        <ol>
+          <li><strong>Target engaged spenders</strong> with bonus multipliers, regardless of income.</li>
+          <li><strong>Focus loyalty budget</strong> on the £50–70k “sweet spot” segment.</li>
+          <li><strong>Leverage reviews</strong> to promote joy/gifting while addressing negative themes like rules complexity.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Tools & Techniques -->
+    <section class="my-5">
+      <h2>Tools & Techniques</h2>
+      <p><strong>Languages & Libraries:</strong> Python (pandas, seaborn, scikit-learn, TextBlob), R (ggplot2, caret)</p>
+      <p><strong>Techniques Applied:</strong></p>
+      <ul>
+        <li>Exploratory Data Analysis (EDA) and KPI dashboards</li>
+        <li>Multiple Linear Regression (R² = 0.84)</li>
+        <li>Decision Tree (R² = 0.94) for loyalty prediction</li>
+        <li>Logistic Regression (AUC ≈ 0.99) to identify high-value customers</li>
+        <li>K-means clustering → 3 clear customer segments</li>
+        <li>Sentiment analysis and Named Entity Recognition on 2,000+ reviews</li>
+      </ul>
+    </section>
+
+    <!-- Dashboard Highlights -->
+    <section class="my-5">
+      <h2>Highlights & Visuals</h2>
+
+      <h5 class="mt-4">Regression: Predicting Loyalty Points</h5>
+      <img src="turtle_regression.png" class="img-fluid rounded border mb-2" alt="Regression Plot">
+      <p class="text-muted fst-italic">
+        The regression explains 84% of loyalty point variation. Spending score dominates as a predictor,
+        with income tapering off after ~£70k.
       </p>
-      <p><strong>Insight:</strong> Focus loyalty budget on £50–70k customers and incentivise engaged spenders, not just high earners.</p>
-    </div>
-  </div>
 
-  <div class="card mb-3 shadow-sm" data-aos="fade-left">
-    <div class="card-body">
-      <h5 class="card-title">Customer Segments</h5>
-      <p class="card-text">
-        K-means (k=3) revealed:<br>
-        🟢 High-income, high-spenders — most valuable.<br>
-        🟠 Mid-income, core spenders — large growth potential.<br>
-        🔵 High-income, low-spenders — missed opportunity.
+      <h5>Customer Segmentation (K-means)</h5>
+      <img src="turtle_clusters.png" class="img-fluid rounded border mb-2" alt="Cluster Segmentation">
+      <p class="text-muted fst-italic">
+        Three segments emerged: (1) high-income/high-spend VIPs, (2) mid-income core spenders, 
+        (3) high-income low-spenders. Behavioural engagement, not demographics, drives value.
       </p>
-      <p><strong>Insight:</strong> Behaviour (spending score) matters more than demographics. Target engaged spenders across income brackets.</p>
-    </div>
-  </div>
 
-  <div class="card mb-3 shadow-sm" data-aos="fade-right">
-    <div class="card-body">
-      <h5 class="card-title">Customer Sentiment</h5>
-      <p class="card-text">
-        • Reviews skew positive (avg polarity +0.12).<br>
-        • Frequent words: “game”, “great”, “fun”, “love”.<br>
-        • Negative mentions: “rules” and “quality” pain-points.<br>
-        • Top entities: D&D, UNO, Lords of Waterdeep.
+      <h5>Customer Sentiment</h5>
+      <img src="turtle_wordcloud.png" class="img-fluid rounded border mb-2" alt="Review Word Cloud">
+      <p class="text-muted fst-italic">
+        Positive themes dominate (“fun”, “great”, “love”), while negative mentions highlight 
+        rule complexity and quality concerns. Popular games include D&D, UNO, and Lords of Waterdeep.
       </p>
-      <p><strong>Insight:</strong> Market joy & gifting while addressing clarity in rules and product expansions.</p>
+    </section>
+
+    <!-- Live Notebook Preview -->
+    <section class="my-5">
+      <h2>Live HTML Notebook Preview</h2>
+      <iframe src="Baracho_Monica_DA301_Assignment-5.html" width="100%" height="700" style="border:1px solid #ccc;"></iframe>
+      <p class="mt-3">
+        <a href="Baracho_Monica_DA301_Assignment_Report.pdf" target="_blank" class="btn btn-outline-primary me-2">📄 Download Full Report (PDF)</a>
+        <a href="Baracho_Monica_DA301_Assignment-5.html" target="_blank" class="btn btn-outline-success me-2">🌐 Open Notebook in New Tab</a>
+        <a href="Baracho_Monica_DA301_Assignment.ipynb" target="_blank" class="btn btn-outline-dark me-2">💻 Download Jupyter Notebook (.ipynb)</a>
+        <a href="Baracho_Monica_Assignment.R" target="_blank" class="btn btn-outline-secondary me-2">📜 Download R Script</a>
+        <a href="Turtle_Games_Analytics.pptx" target="_blank" class="btn btn-outline-info">🎥 Download Slides (PPTX)</a>
+      </p>
+    </section>
+
+    <!-- Back to portfolio -->
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-dark">⬅ Back to Portfolio Home</a>
     </div>
   </div>
-</section>
-
-<!-- Visuals -->
-<section class="container my-5" data-aos="fade-up">
-  <h2 class="mb-4 text-center">Visuals & Models</h2>
-  <div class="row">
-    <div class="col-md-4 mb-3" data-aos="zoom-in">
-      <img src="turtle_regression.png" class="img-fluid rounded shadow-sm" alt="Regression Plot">
-    </div>
-    <div class="col-md-4 mb-3" data-aos="zoom-in">
-      <img src="turtle_clusters.png" class="img-fluid rounded shadow-sm" alt="Cluster Plot">
-    </div>
-    <div class="col-md-4 mb-3" data-aos="zoom-in">
-      <img src="turtle_wordcloud.png" class="img-fluid rounded shadow-sm" alt="Word Cloud">
-    </div>
-  </div>
-</section>
-
-<!-- Project Details -->
-<section class="container my-5" data-aos="fade-up">
-  <h2 class="mb-4 text-center">Project Details</h2>
-  <ul>
-    <li><strong>Course:</strong> LSE DA301 – Advanced Analytics</li>
-    <li><strong>Deliverables:</strong> Technical Report, Jupyter Notebook, R Script, Presentation</li>
-    <li><strong>Methods:</strong> Regression (Linear, Logistic), Decision Tree, K-means, NLP</li>
-    <li><strong>Tools:</strong> Python, R, seaborn, ggplot2, TextBlob</li>
-  </ul>
-</section>
-
-<!-- Download buttons -->
-<section class="text-center my-4" data-aos="zoom-in">
-  <a href="Baracho_Monica_DA301_Assignment_Report.pdf" class="btn btn-success btn-lg" download>
-    Download Full Report (PDF)
-  </a>
-</section>
-
-<section class="text-center my-4" data-aos="zoom-in">
-  <a href="https://murbaracho.github.io/Turtle-Games_Dashboard/" 
-     class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2" target="_blank" rel="noopener">
-    <i class="fas fa-chart-line"></i>
-    View Interactive Dashboard Online
-  </a>
-</section>
-
-<section class="text-center my-4">
-  <a href="index.html" class="btn btn-outline-primary">← Back to Portfolio</a>
-</section>
-
-<footer class="text-center py-3 bg-primary text-white">
-  &copy; 2025 Monica Baracho
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({ duration: 700, offset: 150, once: true });
-</script>
 </body>
 </html>
+
