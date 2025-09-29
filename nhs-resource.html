@@ -2,146 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Interactive NHS utilisation, DNA risk and sentiment dashboard – LSE DA201 project by Monica Baracho"/>
-  <title>NHS Utilisation & DNA Insights — LSE Distinction Project | Monica Baracho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NHS Resource Utilisation & Missed Appointments</title>
 
-  <!-- core libs -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa4A5Y5hTy5KVphtPh/vZc2pMPx4YLmYFHT8UfOKK4o6nCDpHLOY6u9M" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <!---- Bootstrap –-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!---- OPTIONAL: icons / animation –-->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+
+  <!---- Your main stylesheet (keep if you already have one) –-->
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    :root{
-      --tg-primary:#0062ff;
-      --tg-accent:#00c9a7;
-    }
-    body{font-family:"Inter",sans-serif;}
+    /* ───────── Hero ───────── */
     .hero{
-      background:linear-gradient(135deg,var(--tg-primary) 0%,var(--tg-accent) 100%);
-      color:#fff;
-      min-height:60vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:4rem 1rem;
+      background:linear-gradient(135deg,#007bff 0%,#00c6a2 100%);
+      min-height:75vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;color:#fff;padding:2rem 1rem;
     }
-    .hero h1{font-weight:800;letter-spacing:-.5px;}
-    .metric-card{border:0;box-shadow:0 4px 14px rgba(0,0,0,.07);}
-    .metric-value{font-size:1.75rem;font-weight:600;}
-    .section-title{font-weight:700;margin-bottom:.75rem;border-left:4px solid var(--tg-primary);padding-left:.5rem;}
-    .img-rounded{border-radius:.65rem;}
-    footer{font-size:.875rem;background:var(--tg-primary);color:#fff;}
+    .hero a{color:#fff;font-weight:600;text-decoration:none}
+    .hero a:hover{text-decoration:underline;color:#ffe}
+
+    /* ───────── Global tweaks ───────── */
+    section{scroll-margin-top:80px}      /* nice anchor offset */
+    h1,h2,h3{font-weight:700}
   </style>
 </head>
+
 <body>
 
-<!-- Hero ------------------------------------------------------------>
-<section class="hero" data-aos="fade-up">
+<!-- ================= HERO ================= -->
+<section class="hero">
   <div>
     <h1 class="display-5 mb-3">NHS Resource Utilisation &amp; Missed Appointments</h1>
-    <p class="lead mb-4">Data‑driven insights on capacity strain, DNA hotspots &amp; public sentiment.<br><em>LSE DA201 Diagnostic Analytics with Python</em></p>
-    <a href="#exec" class="btn btn-light btn-lg">Explore Key Findings ↓</a>
+    <p class="lead mb-3">
+      Data-driven insights on capacity strain, DNA hotspots &amp; public sentiment.<br>
+      <em>LSE DA201 Diagnostic Analytics with Python</em>
+    </p>
+    <a href="#exec">Explore&nbsp;Key Findings ↓</a>
   </div>
 </section>
 
-<main class="container py-5">
-  <!-- Executive summary -------------------------------------------->
-  <section id="exec" data-aos="fade-up">
-    <h2 class="section-title text-center mb-4">Executive Summary</h2>
-    <div class="row g-4">
-      <div class="col-lg-8">
-        <div class="card shadow-sm p-4 h-100">
-          <h5 class="fw-bold mb-2">Why this matters</h5>
-          <ul class="mb-3 small">
-            <li>GP demand now averages <strong>25.8&nbsp;M appointments/month</strong> – 15 % above pre‑COVID.</li>
-            <li>Clinics run at <strong>115 % of planned capacity</strong> – no slack for shocks.</li>
-            <li><strong>4.7 % of capacity is lost</strong> to DNAs, driven by short‑notice remote bookings.</li>
-          </ul>
-          <h6 class="fw-bold">Board‑level actions</h6>
-          <ol class="small mb-0">
-            <li>📱 SMS reminders for bookings ≤ 7 days.</li>
-            <li>👩‍⚕️ Shift staff to high‑demand ICBs & build surge rosters.</li>
-            <li>💬 Track #NHSCrisis & #ThankYouNHS sentiment weekly.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="col-lg-4 d-flex align-items-center" data-aos="fade-left">
-        <img src="Dashboard_KPI.png" class="img-fluid img-rounded border shadow-sm" alt="KPI snapshot" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Metrics row --------------------------------------------------->
-  <section class="my-5" data-aos="fade-up">
-    <h2 class="section-title">Headline KPIs</h2>
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card metric-card p-3 text-center"><p class="small text-muted mb-1">Appointments / month</p><p class="metric-value">25.8 M</p></div></div>
-      <div class="col-md-4"><div class="card metric-card p-3 text-center"><p class="small text-muted mb-1">Utilisation vs plan</p><p class="metric-value">115 %</p></div></div>
-      <div class="col-md-4"><div class="card metric-card p-3 text-center"><p class="small text-muted mb-1">Capacity lost to DNA</p><p class="metric-value">4.7 %</p></div></div>
-    </div>
-  </section>
-
-  <!-- Dashboard carousel trigger grid ------------------------------>
-  <section class="my-5" data-aos="fade-up">
-    <h2 class="section-title text-center mb-4">Dashboard Visuals</h2>
-    <div class="row">
-      <div class="col-md-4 mb-3" data-aos="zoom-in"><img src="Dashboard_Capacity.png" class="img-fluid img-rounded shadow-sm" alt="Capacity snapshot" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#dashModal"></div>
-      <div class="col-md-4 mb-3" data-aos="zoom-in"><img src="Dashboard_Missed.png" class="img-fluid img-rounded shadow-sm" alt="Missed snapshot" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#dashModal"></div>
-      <div class="col-md-4 mb-3" data-aos="zoom-in"><img src="Dashboard_Utilization.png" class="img-fluid img-rounded shadow-sm" alt="Utilisation detail" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#dashModal"></div>
-    </div>
-  </section>
-
-  <!-- Modal carousel ---------------------------------------------->
-  <div class="modal fade" id="dashModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content bg-dark">
-        <div class="modal-body p-0">
-          <div id="dashCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active"><img src="Dashboard_Capacity.png" class="d-block w-100" alt="Capacity full"/></div>
-              <div class="carousel-item"><img src="Dashboard_Missed.png" class="d-block w-100" alt="Missed full"/></div>
-              <div class="carousel-item"><img src="Dashboard_Utilization.png" class="d-block w-100" alt="Utilisation full"/></div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#dashCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Prev</span></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#dashCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></button>
-          </div>
-        </div>
-      </div>
+<!-- ================= EXECUTIVE SUMMARY ================= -->
+<section id="exec" class="my-5">
+  <div class="container">
+    <h2 class="mb-4">Executive Summary</h2>
+    <div class="card shadow-sm p-4">
+      <p><strong>Why this matters</strong></p>
+      <ul>
+        <li>GP demand now averages <strong>25.8 M appointments/month</strong> – 15 % above pre-COVID levels</li>
+        <li>Clinics operate at <strong>115 % of planned capacity</strong> – no slack for shocks</li>
+        <li><strong>4.7 % of capacity is lost</strong> to missed appointments (DNA), mainly from short-notice and remote bookings</li>
+      </ul>
+      <p><strong>Board-level actions</strong></p>
+      <ol>
+        <li><strong>Target DNA hotspots</strong> – SMS reminders for bookings ≤ 7 days</li>
+        <li><strong>Re-balance staffing</strong> – Shift resources to high-demand ICBs and manage seasonal peaks</li>
+        <li><strong>Monitor sentiment</strong> – Track hashtags like <code>#NHSCrisis</code> and <code>#ThankYouNHS</code> weekly</li>
+      </ol>
     </div>
   </div>
+</section>
 
-  <!-- Notebook & downloads ---------------------------------------->
-  <section class="my-5" data-aos="fade-up">
-    <h2 class="section-title text-center mb-4">Explore the Analysis</h2>
-    <iframe src="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" title="Interactive NHS notebook" width="100%" height="600" loading="lazy" style="border:1px solid #ccc"></iframe>
-    <div class="text-center mt-3 d-flex flex-wrap gap-2 justify-content-center">
-      <a href="Baracho_Monica_DA201_Assignment_Report.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener"><i class="fas fa-file-pdf me-2"></i>Report (PDF)</a>
-      <a href="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" class="btn btn-outline-success" target="_blank" rel="noopener"><i class="fas fa-book me-2"></i>Open Notebook</a>
-      <a href="Baracho_Monica_DA201_Assignment_Notebook.ipynb" class="btn btn-outline-dark" target="_blank" rel="noopener"><i class="fas fa-download me-2"></i>Raw .ipynb</a>
-    </div>
-  </section>
-</main>
+<!-- ================= TOOLS & TECHNIQUES ================= -->
+<section class="my-5">
+  <div class="container">
+    <h2 class="mb-4">Tools &amp; Techniques</h2>
+    <p><strong>Languages &amp; Libraries:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Statsmodels, Plotly, Dash, Geopandas, TextBlob</p>
+    <p><strong>Techniques Applied:</strong></p>
+    <ul>
+      <li>Descriptive statistics and exploratory data analysis (EDA)</li>
+      <li>Seasonal demand analysis using grouped bar charts by period</li>
+      <li>Logistic regression to model missed appointments (DNA)</li>
+      <li>ROC curve and AUC evaluation (AUC = 0.569)</li>
+      <li>Twitter sentiment analysis using TextBlob polarity scores</li>
+      <li>Keyword and hashtag filtering via regex</li>
+      <li>Utilisation mapping and regional comparisons by ICB</li>
+      <li>Interactive dashboard prototype in JupyterDash</li>
+    </ul>
+  </div>
+</section>
 
-<footer class="text-center py-3">
-  © 2025 Monica Baracho · <a href="index.html" class="text-white text-decoration-none">Portfolio home</a>
+<!-- ================= DASHBOARD HIGHLIGHTS ================= -->
+<section class="my-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">Dashboard Highlights</h2>
+
+    <h5 class="mt-4">KPIs Overview</h5>
+    <img src="Dashboard_KPI.png" class="img-fluid rounded border mb-2" alt="KPI Dashboard">
+    <p class="text-muted fst-italic">This dashboard summarises key NHS performance indicators from Aug 2021 to Jun 2022 …</p>
+
+    <h5>Capacity Utilisation vs Planning Limit</h5>
+    <img src="Dashboard_Capacity.png" class="img-fluid rounded border mb-2" alt="Capacity Chart">
+    <p class="text-muted fst-italic">NHS services consistently operated over capacity …</p>
+
+    <h5>Detailed Capacity Utilisation</h5>
+    <img src="Dashboard_Utilization.png" class="img-fluid rounded border mb-2" alt="Utilisation Detail Chart">
+    <p class="text-muted fst-italic">Persistent over-utilisation beyond 100 % confirms …</p>
+
+    <h5>Missed Appointments Trends</h5>
+    <img src="Dashboard_Missed.png" class="img-fluid rounded border mb-2" alt="Missed Appointments Chart">
+    <p class="text-muted fst-italic">Monthly missed appointments (DNAs) ranged between 4.2 % and 5.18 % …</p>
+  </div>
+</section>
+
+<!-- =========== LIVE NOTEBOOK PREVIEW & DOWNLOADS =========== -->
+<section class="my-5">
+  <div class="container">
+    <h2 class="mb-4 text-center">Live HTML Notebook Preview</h2>
+    <iframe src="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html"
+            width="100%" height="700" style="border:1px solid #ccc;"></iframe>
+
+    <p class="mt-3 text-center">
+      <a href="Baracho_Monica_DA201_Assignment_Report.pdf" target="_blank" class="btn btn-outline-primary me-2">Download Full Report (PDF)</a>
+      <a href="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" target="_blank" class="btn btn-outline-success me-2">🌐 Open Notebook</a>
+      <a href="Baracho_Monica_DA201_Assignment_Notebook.ipynb" target="_blank" class="btn btn-outline-dark">Download .ipynb</a>
+    </p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center py-3 bg-primary text-white">
+  &copy; 2025 Monica Baracho
 </footer>
 
-<!-- scripts --------------------------------------------------------->
+<!---- JS –-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({duration:700,offset:150,once:true});
-  document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#dashModal"]').forEach((thumb, idx)=>{
-    thumb.addEventListener("click",()=>{
-      const carEl=document.querySelector('#dashCarousel');
-      const car=bootstrap.Carousel.getOrCreateInstance(carEl); car.to(idx);
-    })
-  });
-</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({duration:700,offset:150,once:true});</script> -->
 </body>
 </html>
