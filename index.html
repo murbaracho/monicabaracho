@@ -5,26 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monica Baracho Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- ✅ Add Font Awesome so icons render -->
+  <!-- ✅ Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- ✅ Your custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* optional: nice hover for contact icons */
-    .contact-icons a { transition: transform .15s ease, opacity .15s ease; }
-    .contact-icons a:hover { transform: translateY(-2px) scale(1.05); opacity: .9; }
-  </style>
 </head>
 <body>
-  <header class="text-center p-5 bg-light">
-    <img src="monica.jpg" alt="Monica Baracho" class="rounded-circle mb-3" width="200">
-    <h1>Monica Baracho</h1>
+
+  <!-- Hero -->
+  <header class="hero d-flex flex-column justify-content-center align-items-center text-white">
+    <img src="monica.jpg" alt="Monica Baracho" class="rounded-circle mb-3 border border-light border-3" width="180">
+    <h1 class="fw-bold">Monica Baracho</h1>
     <p class="lead">Economist & Data Analyst | Turning data into insight</p>
+    <div class="mt-3">
+      <a href="Monica_Baracho_CV.pdf" class="btn btn-light me-2" target="_blank"><i class="fas fa-file-alt"></i> CV</a>
+      <a href="#contact" class="btn btn-outline-light"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">Portfolio</a>
-      <div>
+      <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
@@ -41,28 +47,29 @@
       Hi, I’m <strong>Monica Baracho</strong> — an economist and data analyst passionate about uncovering insights from data, building models, and supporting smart decisions. With experience in international trade, marketing analytics, and economic research, I bring a unique mix of analytical and communication skills to every project.
     </p>
     <div class="row text-center mt-4">
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-database fa-2x text-primary" aria-hidden="true"></i><p class="mt-2 mb-0">SQL & Excel</p></div></div>
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-python fa-2x text-warning" aria-hidden="true"></i><p class="mt-2 mb-0">Python</p></div></div>
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-r-project fa-2x text-info" aria-hidden="true"></i><p class="mt-2 mb-0">R</p></div></div>
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-chart-line fa-2x text-success" aria-hidden="true"></i><p class="mt-2 mb-0">Tableau & Power BI</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-database fa-2x text-primary"></i><p class="mt-2 mb-0">SQL & Excel</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-python fa-2x text-warning"></i><p class="mt-2 mb-0">Python</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-r-project fa-2x text-info"></i><p class="mt-2 mb-0">R</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-chart-line fa-2x text-success"></i><p class="mt-2 mb-0">Tableau & Power BI</p></div></div>
     </div>
   </section>
 
+  <!-- Projects -->
   <section id="projects" class="container my-5">
     <h2 class="text-center mb-4">Projects</h2>
     <div class="row g-4">
 
       <!-- Project 1: 2Market -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
-          <img src="2Market.jpg" class="card-img-top" alt="2Market Project Cover" style="height: 300px; object-fit: cover;">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="2Market.jpg" class="card-img-top" alt="2Market Project" style="height: 300px; object-fit: cover;">
           <div class="card-body d-flex flex-column">
             <h3 class="card-title">2Market: Customer Purchase Behaviour</h3>
+            <span class="badge-custom mb-2">Distinction (84%)</span>
             <p class="card-text">
               <strong>Challenge:</strong> Identify key drivers of customer purchasing behavior.<br>
-              <strong>Tools Used:</strong> R, SQL, Excel, Tableau.<br>
-              <strong>Actions Taken:</strong> Analyzed customer demographics, channel performance, and ad impact. Built predictive models to forecast behavior and identify high-conversion groups.<br>
-              <strong>Results:</strong> Revealed income and education as key drivers. Delivered actionable targeting insights for campaign optimization.
+              <strong>Tools:</strong> R, SQL, Tableau.<br>
+              <strong>Result:</strong> Income & education emerged as key drivers, improving campaign targeting.
             </p>
             <a href="2market.html" class="btn btn-primary mt-auto">View Project</a>
           </div>
@@ -71,15 +78,15 @@
 
       <!-- Project 2: NHS -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
-          <img src="NHS.png" class="card-img-top" alt="NHS Resource Utilization" style="height: 300px; object-fit: cover;">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="NHS.png" class="card-img-top" alt="NHS Project" style="height: 300px; object-fit: cover;">
           <div class="card-body d-flex flex-column">
             <h3 class="card-title">NHS Service Utilisation Analysis</h3>
+            <span class="badge-custom mb-2">Distinction (89%)</span>
             <p class="card-text">
-              <strong>Challenge:</strong> Investigate NHS appointment trends, capacity strain, and missed appointments.<br>
-              <strong>Tools Used:</strong> Python, Pandas, Logistic Regression, VADER.<br>
-              <strong>Actions Taken:</strong> Analyzed internal NHS datasets and Twitter sentiment. Modeled missed appointment risk (DNA) and capacity overuse.<br>
-              <strong>Results:</strong> Highlighted 115% avg. utilisation and 4.7% missed slots. Recommended smarter rostering and sentiment-based response strategies.
+              <strong>Challenge:</strong> Investigate NHS appointment demand & missed slots.<br>
+              <strong>Tools:</strong> Python, Logistic Regression, VADER.<br>
+              <strong>Result:</strong> Found 115% utilisation and 4.7% missed slots, guiding rostering strategies.
             </p>
             <a href="nhs-resource.html" class="btn btn-primary mt-auto">View Project</a>
           </div>
@@ -88,15 +95,15 @@
 
       <!-- Project 3: Dissertation -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm project-card">
           <img src="dissertation.jpg" class="card-img-top" alt="Dissertation Project" style="height: 300px; object-fit: cover;">
           <div class="card-body d-flex flex-column">
             <h3 class="card-title">Dissertation: Mercosur & Brazil Trade</h3>
+            <span class="badge-custom mb-2">High Merit</span>
             <p class="card-text">
               <strong>Challenge:</strong> Evaluate the impact of Mercosur membership on Brazil's trade flows.<br>
-              <strong>Tools Used:</strong> Stata, Gravity Model, Panel Data Econometrics.<br>
-              <strong>Actions Taken:</strong> Built and estimated a panel model with bilateral trade data and policy controls.<br>
-              <strong>Results:</strong> Found increased trade intensity with Mercosur countries. Provided policy insights for trade bloc strategy.
+              <strong>Tools:</strong> Stata, Gravity Model.<br>
+              <strong>Result:</strong> Found increased trade intensity with Mercosur countries. Provided policy insights for trade bloc strategy.
             </p>
             <a href="dissertation.html" class="btn btn-primary mt-auto">View Project</a>
           </div>
@@ -105,37 +112,57 @@
 
       <!-- Project 4: Coffee Prices -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm project-card">
           <img src="coffee.jpg" class="card-img-top" alt="Coffee Price Determinants Project" style="height: 300px; object-fit: cover;">
           <div class="card-body d-flex flex-column">
             <h3 class="card-title">Coffee Price Determinants</h3>
+            <span class="badge-custom mb-2">Research Project</span>
             <p class="card-text">
               <strong>Challenge:</strong> Identify macroeconomic drivers of coffee price volatility.<br>
-              <strong>Tools Used:</strong> R, Regression Modeling, Data Wrangling.<br>
-              <strong>Actions Taken:</strong> Modeled monthly price variation against oil prices, currency strength, and global imports.<br>
-              <strong>Results:</strong> Highlighted oil and FX rates as key predictors. Suggested real-time data use for better forecasting.
+              <strong>Tools:</strong> R, Regression Modeling.<br>
+              <strong>Result:</strong> Oil prices & FX rates were key predictors, supporting better forecasting.
             </p>
             <a href="Coffee_Price_Determinants.html" class="btn btn-primary mt-auto">View Project</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 5: Turtle Games Loyalty Analytics -->
+      <!-- Project 5: Turtle Games -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
-          <img src="turtle_dashboard.png" class="card-img-top" alt="Turtle Games Loyalty Analytics" style="height: 300px; object-fit: cover;">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="turtle_dashboard.png" class="card-img-top" alt="Turtle Games Project" style="height: 300px; object-fit: cover;">
           <div class="card-body d-flex flex-column">
             <h3 class="card-title">Turtle Games – Loyalty Analytics</h3>
+            <span class="badge-custom mb-2">Distinction</span>
             <p class="card-text">
               <strong>Challenge:</strong> Boost customer-point engagement & identify VIPs.<br>
-              <strong>Tools Used:</strong> Python (spaCy, scikit-learn), R (ggplot2, caret).<br>
-              <strong>Actions Taken:</strong> EDA dashboard, multiple regression (R² 0.84), k-means segmentation, sentiment mining of 2,000 reviews.<br>
-              <strong>Results:</strong> +4 pp retention potential (≈ £47k / 6 mo) via tiered point multipliers; identified 500 high-value customers for VIP offers.
+              <strong>Tools:</strong> Python, R, NLP.<br>
+              <strong>Result:</strong> Identified 500 high-value customers and £47k retention potential.
             </p>
             <a href="turtlegames.html" class="btn btn-primary mt-auto">View Project</a>
           </div>
         </div>
       </div>
+
+      <!-- Project 6: Brazil Dashboard -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="Brazilian-agribusiness.jpg" class="card-img-top" alt="Brazil Dashboard Project" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Brazil Trade Dashboard</h3>
+            <span class="badge-custom mb-2">Interactive App</span>
+            <p class="card-text">
+              <strong>Challenge:</strong> Build an interactive tool to monitor Brazil’s trade performance.<br>
+              <strong>Tools:</strong> Python, Plotly Dash.<br>
+              <strong>Result:</strong> Enabled dynamic exploration of trade partners & sectors.
+            </p>
+            <a href="brazil-dashboard.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="bg-light py-5">
@@ -145,10 +172,10 @@
         <a href="mailto:monicaurquizabaracho@gmail.com" class="text-decoration-none text-danger fs-3" aria-label="Email Monica">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://www.linkedin.com/in/monica-baracho-2735b0a8/" target="_blank" rel="noopener" class="text-decoration-none text-primary fs-3" aria-label="Monica on LinkedIn">
+        <a href="https://www.linkedin.com/in/monica-baracho-2735b0a8/" target="_blank" class="text-decoration-none text-primary fs-3" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/murbaracho" target="_blank" rel="noopener" class="text-decoration-none text-dark fs-3" aria-label="Monica on GitHub">
+        <a href="https://github.com/murbaracho" target="_blank" class="text-decoration-none text-dark fs-3" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -156,8 +183,24 @@
     </div>
   </section>
 
-  <footer class="text-center py-3 bg-primary text-white">
-    &copy; 2025 Monica Baracho
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-white">
+    &copy; 2025 Monica Baracho | Last updated: Sept 2025
   </footer>
+
+  <!-- Scroll reveal script -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+    function revealOnScroll() {
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) card.classList.add('show');
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
