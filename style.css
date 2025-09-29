@@ -1,175 +1,49 @@
-/* --- Brand Colors --- */
-:root {
-  --primary-color: #2575fc;     /* Blue */
-  --accent-color: #6a11cb;      /* Purple */
-  --highlight-color: #ffd43b;   /* Gold highlight */
-  --bg-light: #f8f9fa;          /* Light gray */
-  --bg-dark: #343a40;           /* Dark gray */
-  --text-dark: #212529;         /* Neutral dark text */
-}
-
-/* --- Base styles --- */
 body {
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.7;
-  color: var(--text-dark);
-  background-color: var(--bg-light);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* --- Headings --- */
-h1, h2, h3, h4, h5 {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-h1 { font-size: 2.25rem; }
-h2 { font-size: 1.75rem; margin-top: 1.5rem; }
-h3 { font-size: 1.4rem; }
-
-/* --- Hero Section --- */
 .hero {
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-}
-
-.hero img {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 60vh;
+    text-align: center;
+    padding: 2rem;
+    color: white;
 }
 
 .hero .btn {
-  background-color: white;
-  color: var(--primary-color);
-  font-weight: bold;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+    background-color: white;
+    color: #2575fc;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .hero .btn:hover {
-  transform: scale(1.08);
-  background-color: #f0f0f0;
+    transform: scale(1.1);
+    background-color: #f0f0f0;
 }
 
-/* --- Navbar --- */
-.navbar {
-  font-weight: 500;
-}
-.navbar .nav-link {
-  transition: color 0.2s ease;
-}
-.navbar .nav-link:hover {
-  color: var(--highlight-color);
-}
-
-/* --- Cards (default) --- */
 .card {
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  opacity: 0; /* hidden until scroll animation */
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    border: none;
+    border-radius: 0.5rem;
 }
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 .card-body {
-  padding: 1rem;
+    padding: 1rem;
 }
+
 .card-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-/* --- Project card hover --- */
-.project-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(37, 117, 252, 0.25); /* blue glow */
-}
-
-/* --- Skill cards (icons) --- */
-.card i {
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.card:hover i {
-  transform: scale(1.2);
-  color: var(--primary-color);
-}
-
-/* --- Custom Badge --- */
-.badge-custom {
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-  color: white;
-  font-weight: 600;
-  padding: 0.45em 0.9em;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  display: inline-block;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-}
-
-/* --- Buttons --- */
-.btn {
-  border-radius: 0.4rem;
-  font-weight: 500;
-}
-.btn-outline-dark:hover {
-  background: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-}
-
-/* --- Contact icons --- */
-.contact-icons a {
-  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
-}
-.contact-icons a:hover {
-  transform: scale(1.15);
-  opacity: 0.9;
-  color: var(--primary-color) !important;
-}
-
-/* --- Footer --- */
 footer {
-  background-color: var(--bg-dark);
-  color: white;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  letter-spacing: 0.3px;
+    background-color: #343a40;
+    color: white;
+    padding: 1rem 0;
+    font-size: 0.9rem;
 }
 
-/* --- Section spacing --- */
-section {
-  margin-bottom: 3rem;
-}
-
-/* --- Images in case study pages --- */
-img.rounded.border {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
-}
-
-/* --- Utility: fade-in on scroll --- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.6s ease;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+html {
+    scroll-behavior: smooth;
 }
