@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monica Baracho Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ✅ Add Font Awesome so icons render -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* optional: nice hover for contact icons */
+    .contact-icons a { transition: transform .15s ease, opacity .15s ease; }
+    .contact-icons a:hover { transform: translateY(-2px) scale(1.05); opacity: .9; }
+  </style>
 </head>
 <body>
   <header class="text-center p-5 bg-light">
@@ -34,145 +41,143 @@
       Hi, I’m <strong>Monica Baracho</strong> — an economist and data analyst passionate about uncovering insights from data, building models, and supporting smart decisions. With experience in international trade, marketing analytics, and economic research, I bring a unique mix of analytical and communication skills to every project.
     </p>
     <div class="row text-center mt-4">
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-database fa-2x text-primary"></i><p class="mt-2 mb-0">SQL & Excel</p></div></div>
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-python fa-2x text-warning"></i><p class="mt-2 mb-0">Python</p></div></div>
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-r-project fa-2x text-info"></i><p class="mt-2 mb-0">R</p></div></div>
-      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-chart-line fa-2x text-success"></i><p class="mt-2 mb-0">Tableau & Power BI</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-database fa-2x text-primary" aria-hidden="true"></i><p class="mt-2 mb-0">SQL & Excel</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-python fa-2x text-warning" aria-hidden="true"></i><p class="mt-2 mb-0">Python</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fab fa-r-project fa-2x text-info" aria-hidden="true"></i><p class="mt-2 mb-0">R</p></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><i class="fas fa-chart-line fa-2x text-success" aria-hidden="true"></i><p class="mt-2 mb-0">Tableau & Power BI</p></div></div>
     </div>
   </section>
 
   <section id="projects" class="container my-5">
-  <h2 class="text-center mb-4">Projects</h2>
+    <h2 class="text-center mb-4">Projects</h2>
+    <div class="row g-4">
 
-  <div class="row g-4">
-
-    <!-- Project 1: 2Market -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <img src="2Market.jpg" class="card-img-top" alt="2Market Project Cover" style="height: 300px; object-fit: cover;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title">2Market: Customer Purchase Behaviour</h3>
-          <p class="card-text">
-            <strong>Challenge:</strong> Identify key drivers of customer purchasing behavior.<br>
-            <strong>Tools Used:</strong> R, SQL, Excel, Tableau.<br>
-            <strong>Actions Taken:</strong> Analyzed customer demographics, channel performance, and ad impact. Built predictive models to forecast behavior and identify high-conversion groups.<br>
-            <strong>Results:</strong> Revealed income and education as key drivers. Delivered actionable targeting insights for campaign optimization.
-          </p>
-          <a href="2market.html" class="btn btn-primary mt-auto">View Project</a>
+      <!-- Project 1: 2Market -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="2Market.jpg" class="card-img-top" alt="2Market Project Cover" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">2Market: Customer Purchase Behaviour</h3>
+            <p class="card-text">
+              <strong>Challenge:</strong> Identify key drivers of customer purchasing behavior.<br>
+              <strong>Tools Used:</strong> R, SQL, Excel, Tableau.<br>
+              <strong>Actions Taken:</strong> Analyzed customer demographics, channel performance, and ad impact. Built predictive models to forecast behavior and identify high-conversion groups.<br>
+              <strong>Results:</strong> Revealed income and education as key drivers. Delivered actionable targeting insights for campaign optimization.
+            </p>
+            <a href="2market.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Project 2: NHS -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <img src="NHS.png" class="card-img-top" alt="NHS Resource Utilization" style="height: 300px; object-fit: cover;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title">NHS Service Utilisation Analysis</h3>
-          <p class="card-text">
-            <strong>Challenge:</strong> Investigate NHS appointment trends, capacity strain, and missed appointments.<br>
-            <strong>Tools Used:</strong> Python, Pandas, Logistic Regression, VADER.<br>
-            <strong>Actions Taken:</strong> Analyzed internal NHS datasets and Twitter sentiment. Modeled missed appointment risk (DNA) and capacity overuse.<br>
-            <strong>Results:</strong> Highlighted 115% avg. utilisation and 4.7% missed slots. Recommended smarter rostering and sentiment-based response strategies.
-          </p>
-          <a href="nhs-resource.html" class="btn btn-primary mt-auto">View Project</a>
+      <!-- Project 2: NHS -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="NHS.png" class="card-img-top" alt="NHS Resource Utilization" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">NHS Service Utilisation Analysis</h3>
+            <p class="card-text">
+              <strong>Challenge:</strong> Investigate NHS appointment trends, capacity strain, and missed appointments.<br>
+              <strong>Tools Used:</strong> Python, Pandas, Logistic Regression, VADER.<br>
+              <strong>Actions Taken:</strong> Analyzed internal NHS datasets and Twitter sentiment. Modeled missed appointment risk (DNA) and capacity overuse.<br>
+              <strong>Results:</strong> Highlighted 115% avg. utilisation and 4.7% missed slots. Recommended smarter rostering and sentiment-based response strategies.
+            </p>
+            <a href="nhs-resource.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Project 3: Dissertation -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <img src="dissertation.jpg" class="card-img-top" alt="Dissertation Project" style="height: 300px; object-fit: cover;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title">Dissertation: Mercosur & Brazil Trade</h3>
-          <p class="card-text">
-            <strong>Challenge:</strong> Evaluate the impact of Mercosur membership on Brazil's trade flows.<br>
-            <strong>Tools Used:</strong> Stata, Gravity Model, Panel Data Econometrics.<br>
-            <strong>Actions Taken:</strong> Built and estimated a panel model with bilateral trade data and policy controls.<br>
-            <strong>Results:</strong> Found increased trade intensity with Mercosur countries. Provided policy insights for trade bloc strategy.
-          </p>
-          <a href="dissertation.html" class="btn btn-primary mt-auto">View Project</a>
+      <!-- Project 3: Dissertation -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="dissertation.jpg" class="card-img-top" alt="Dissertation Project" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Dissertation: Mercosur & Brazil Trade</h3>
+            <p class="card-text">
+              <strong>Challenge:</strong> Evaluate the impact of Mercosur membership on Brazil's trade flows.<br>
+              <strong>Tools Used:</strong> Stata, Gravity Model, Panel Data Econometrics.<br>
+              <strong>Actions Taken:</strong> Built and estimated a panel model with bilateral trade data and policy controls.<br>
+              <strong>Results:</strong> Found increased trade intensity with Mercosur countries. Provided policy insights for trade bloc strategy.
+            </p>
+            <a href="dissertation.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Project 4: Coffee Prices -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <img src="coffee.jpg" class="card-img-top" alt="Coffee Price Determinants Project" style="height: 300px; object-fit: cover;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title">Coffee Price Determinants</h3>
-          <p class="card-text">
-            <strong>Challenge:</strong> Identify macroeconomic drivers of coffee price volatility.<br>
-            <strong>Tools Used:</strong> R, Regression Modeling, Data Wrangling.<br>
-            <strong>Actions Taken:</strong> Modeled monthly price variation against oil prices, currency strength, and global imports.<br>
-            <strong>Results:</strong> Highlighted oil and FX rates as key predictors. Suggested real-time data use for better forecasting.
-          </p>
-          <a href="Coffee_Price_Determinants.html" class="btn btn-primary mt-auto">View Project</a>
+      <!-- Project 4: Coffee Prices -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="coffee.jpg" class="card-img-top" alt="Coffee Price Determinants Project" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Coffee Price Determinants</h3>
+            <p class="card-text">
+              <strong>Challenge:</strong> Identify macroeconomic drivers of coffee price volatility.<br>
+              <strong>Tools Used:</strong> R, Regression Modeling, Data Wrangling.<br>
+              <strong>Actions Taken:</strong> Modeled monthly price variation against oil prices, currency strength, and global imports.<br>
+              <strong>Results:</strong> Highlighted oil and FX rates as key predictors. Suggested real-time data use for better forecasting.
+            </p>
+            <a href="Coffee_Price_Determinants.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
         </div>
       </div>
-    </div>
 
-   <!-- Project 5: Turtle Games Loyalty Analytics -->
-<div class="col-md-6">
-  <div class="card h-100 shadow-sm">
-    <img src="turtle_dashboard.png" class="card-img-top" alt="Turtle Games Loyalty Analytics"
-         style="height: 300px; object-fit: cover;">
-    <div class="card-body d-flex flex-column">
-      <h3 class="card-title">Turtle Games – Loyalty Analytics</h3>
-      <p class="card-text">
-        <strong>Challenge:</strong> Boost customer-point engagement & identify VIPs.<br>
-        <strong>Tools Used:</strong> Python (spaCy, scikit-learn), R (ggplot2, caret).<br>
-        <strong>Actions Taken:</strong> EDA dashboard, multiple regression (R² 0.84), k-means
-        segmentation, sentiment mining of 2,000 reviews.<br>
-        <strong>Results:</strong> +4 pp retention potential (≈ £47k / 6 mo) via
-        tiered point multipliers; identified 500 high-value customers for VIP offers.
-      </p>
-      <a href="turtlegames.html" class="btn btn-primary mt-auto">View Project</a>
-    </div>
-  </div>
-</div>
-
-    <!-- Project 6: Brazil Dashboard -->
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <img src="Brazilian-agribusiness.jpg" class="card-img-top" alt="Brazil Trade Dashboard" style="height: 300px; object-fit: cover;">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title">Brazil Trade Dashboard</h3>
-          <p class="card-text">
-            <strong>Challenge:</strong> Create a live tool to monitor Brazil’s trade and economic performance.<br>
-            <strong>Tools Used:</strong> Python, Plotly, Dash.<br>
-            <strong>Actions Taken:</strong> Built a multi-page interactive dashboard using trade, inflation, and commodity datasets.<br>
-            <strong>Results:</strong> Enabled dynamic exploration of trade partners and sectors. Used by stakeholders to monitor export trends.
-          </p>
-          <a href="brazil-dashboard.html" class="btn btn-primary mt-auto">View Project</a>
+      <!-- Project 5: Turtle Games Loyalty Analytics -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="turtle_dashboard.png" class="card-img-top" alt="Turtle Games Loyalty Analytics" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Turtle Games – Loyalty Analytics</h3>
+            <p class="card-text">
+              <strong>Challenge:</strong> Boost customer-point engagement & identify VIPs.<br>
+              <strong>Tools Used:</strong> Python (spaCy, scikit-learn), R (ggplot2, caret).<br>
+              <strong>Actions Taken:</strong> EDA dashboard, multiple regression (R² 0.84), k-means segmentation, sentiment mining of 2,000 reviews.<br>
+              <strong>Results:</strong> +4 pp retention potential (≈ £47k / 6 mo) via tiered point multipliers; identified 500 high-value customers for VIP offers.
+            </p>
+            <a href="turtlegames.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
         </div>
       </div>
+
+      <!-- Project 6: Brazil Dashboard -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img src="Brazilian-agribusiness.jpg" class="card-img-top" alt="Brazil Trade Dashboard" style="height: 300px; object-fit: cover;">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Brazil Trade Dashboard</h3>
+            <p class="card-text">
+              <strong>Challenge:</strong> Create a live tool to monitor Brazil’s trade and economic performance.<br>
+              <strong>Tools Used:</strong> Python, Plotly, Dash.<br>
+              <strong>Actions Taken:</strong> Built a multi-page interactive dashboard using trade, inflation, and commodity datasets.<br>
+              <strong>Results:</strong> Enabled dynamic exploration of trade partners and sectors. Used by stakeholders to monitor export trends.
+            </p>
+            <a href="brazil-dashboard.html" class="btn btn-primary mt-auto">View Project</a>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-
-<section id="contact" class="bg-light py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">Contact</h2>
-    <div class="d-flex justify-content-center gap-4 mt-3">
-      <a href="mailto:monicaurquizabaracho@gmail.com" target="_blank" class="text-decoration-none text-danger fs-3">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/monica-baracho-2735b0a8/" target="_blank" class="text-decoration-none text-primary fs-3">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/murbaracho" target="_blank" class="text-decoration-none text-dark fs-3">
-        <i class="fab fa-github"></i>
-      </a>
+  <!-- Contact -->
+  <section id="contact" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Contact</h2>
+      <div class="d-flex justify-content-center gap-4 mt-3 contact-icons">
+        <a href="mailto:monicaurquizabaracho@gmail.com" class="text-decoration-none text-danger fs-3" aria-label="Email Monica">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/monica-baracho-2735b0a8/" target="_blank" rel="noopener" class="text-decoration-none text-primary fs-3" aria-label="Monica on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/murbaracho" target="_blank" rel="noopener" class="text-decoration-none text-dark fs-3" aria-label="Monica on GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p class="mt-3">Or email me directly at <a href="mailto:monicaurquizabaracho@gmail.com">monicaurquizabaracho@gmail.com</a></p>
     </div>
-    <p class="mt-3">Or email me directly at <a href="mailto:monicaurquizabaracho@gmail.com">monicaurquizabaracho@gmail.com</a></p>
-  </div>
-</section>
+  </section>
 
-
-<footer class="text-center py-3 bg-primary text-white">
-  &copy; 2025 Monica Baracho
-</footer>
+  <footer class="text-center py-3 bg-primary text-white">
+    &copy; 2025 Monica Baracho
+  </footer>
+</body>
+</html>
