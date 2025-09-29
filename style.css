@@ -1,6 +1,6 @@
 /* ================================
    Monica Baracho Portfolio Styles
-   Clean, Professional & Consistent
+   Clean + Professional + Flexible
    ================================ */
 
 /* --- Brand Colors --- */
@@ -9,9 +9,10 @@
   --bg-card: #ffffff;        /* pure white for cards */
   --bg-accent: #e6dccf;      /* subtle beige accent */
   --text-main: #2c2c2c;      /* dark gray text */
-  --primary-color: #3366cc;  /* muted blue for links/buttons */
+  --primary-color: #3366cc;  /* muted blue */
   --primary-hover: #254a99;  /* darker blue for hover */
   --success-color: #3fa67a;  /* soft green for badges */
+  --accent-color: #7c3aed;   /* purple */
 }
 
 /* --- Base styles --- */
@@ -26,12 +27,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* --- Hero Section --- */
-.hero {
+/* --- Hero Sections --- */
+
+/* Default clean hero (for project pages) */
+.hero-light {
   background: var(--bg-main);
   text-align: center;
   padding: 4rem 2rem;
   color: var(--text-main);
+}
+
+/* Bold gradient hero (for homepage) */
+.hero-dark {
+  background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
 }
 
 .hero img {
@@ -63,19 +74,11 @@ html {
 .navbar {
   background-color: var(--primary-color) !important;
 }
-
 .navbar .nav-link {
   transition: color 0.2s ease;
 }
-
 .navbar .nav-link:hover {
   color: var(--bg-accent);
-}
-
-/* --- Section headings --- */
-h2 {
-  font-weight: 600;
-  margin-bottom: 1.2rem;
 }
 
 /* --- Cards --- */
@@ -86,12 +89,10 @@ h2 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
-
 .card-title {
   font-weight: 600;
 }
@@ -129,7 +130,6 @@ h2 {
 .contact-icons a {
   transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
 }
-
 .contact-icons a:hover {
   transform: scale(1.15);
   opacity: 0.9;
