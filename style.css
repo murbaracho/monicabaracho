@@ -5,12 +5,14 @@
   --highlight-color: #ffd43b;   /* Gold highlight */
   --bg-light: #f8f9fa;          /* Light gray */
   --bg-dark: #343a40;           /* Dark gray */
+  --text-dark: #212529;         /* Neutral dark text */
 }
 
 /* --- Base styles --- */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text-dark);
   background-color: var(--bg-light);
 }
 
@@ -18,13 +20,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* --- Headings --- */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; margin-top: 1.5rem; }
+h3 { font-size: 1.4rem; }
+
 /* --- Hero Section --- */
 .hero {
   background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
   min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
   color: white;
+  padding: 2rem;
 }
 
 .hero img {
@@ -35,15 +50,20 @@ html {
   background-color: white;
   color: var(--primary-color);
   font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .hero .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   background-color: #f0f0f0;
 }
 
 /* --- Navbar --- */
+.navbar {
+  font-weight: 500;
+}
 .navbar .nav-link {
   transition: color 0.2s ease;
 }
@@ -51,29 +71,37 @@ html {
   color: var(--highlight-color);
 }
 
-/* --- Cards --- */
+/* --- Cards (default) --- */
 .card {
   border: none;
   border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   opacity: 0; /* hidden until scroll animation */
-  transform: translateY(30px);
+  transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .card.show {
   opacity: 1;
   transform: translateY(0);
 }
-
 .card-body {
   padding: 1rem;
 }
-
 .card-title {
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-/* --- Skill card icons hover --- */
+/* --- Project card hover --- */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(37, 117, 252, 0.25); /* blue glow */
+}
+
+/* --- Skill cards (icons) --- */
 .card i {
   transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -82,27 +110,30 @@ html {
   color: var(--primary-color);
 }
 
-/* --- Project card hover --- */
-.project-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(37, 117, 252, 0.25); /* blue glow */
-}
-
 /* --- Custom Badge --- */
 .badge-custom {
   background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
   color: white;
-  font-weight: bold;
-  padding: 0.4em 0.7em;
-  border-radius: 0.4rem;
-  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45em 0.9em;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
   display: inline-block;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
-/* --- Contact icons hover --- */
+/* --- Buttons --- */
+.btn {
+  border-radius: 0.4rem;
+  font-weight: 500;
+}
+.btn-outline-dark:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* --- Contact icons --- */
 .contact-icons a {
   transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
 }
@@ -118,4 +149,27 @@ footer {
   color: white;
   padding: 1rem 0;
   font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+/* --- Section spacing --- */
+section {
+  margin-bottom: 3rem;
+}
+
+/* --- Images in case study pages --- */
+img.rounded.border {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+/* --- Utility: fade-in on scroll --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
 }
