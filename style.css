@@ -1,9 +1,15 @@
+/* --- Base styles --- */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Hero Section --- */
 .hero {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     height: 60vh;
@@ -24,9 +30,21 @@ body {
     background-color: #f0f0f0;
 }
 
+/* --- Navbar hover effect --- */
+.navbar .nav-link {
+    transition: color 0.2s ease;
+}
+.navbar .nav-link:hover {
+    color: #ffd43b;
+}
+
+/* --- Cards (skills + projects) --- */
 .card {
     border: none;
     border-radius: 0.5rem;
+    opacity: 0; /* hidden before animation */
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .card-body {
@@ -37,13 +55,43 @@ body {
     font-weight: bold;
 }
 
+/* Reveal cards on scroll */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skill card icons hover */
+.card i {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.card:hover i {
+    transform: scale(1.2);
+    color: #2575fc;
+}
+
+/* Project card hover */
+.project-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Contact icons hover --- */
+.contact-icons a {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.contact-icons a:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+/* --- Footer --- */
 footer {
     background-color: #343a40;
     color: white;
     padding: 1rem 0;
     font-size: 0.9rem;
-}
-
-html {
-    scroll-behavior: smooth;
 }
