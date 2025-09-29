@@ -2,161 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NHS Resource Utilisation & Missed Appointments</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive NHS utilisation, missed-appointment and sentiment dashboard – LSE DA201 project by Monica Baracho"/>
+  <title>NHS Utilisation & DNA Insights – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa4A5Y5hTy5KVphtPh/vZc2pMPx4YLmYFHT8UfOKK4o6nCDpHLOY6u9M" crossorigin="anonymous" />
+  <style>
+    body { font-family: "Inter", sans-serif; }
+    .hero {
+      background: linear-gradient(135deg,#0062ff 0%,#00c9a7 100%);
+      color:#fff;
+      padding:6rem 0 4rem;
+      text-align:center;
+    }
+    .hero h1 { font-weight:800; letter-spacing:-.5px; }
+    .metric-card { border:0; box-shadow:0 4px 14px rgba(0,0,0,.07); }
+    .metric-card .metric-value { font-size:1.75rem; font-weight:600; }
+    .section-title { font-weight:700; margin-bottom:.75rem; border-left:4px solid #0062ff; padding-left:.5rem; }
+    .img-rounded { border-radius:.65rem; }
+    footer { font-size:.875rem; }
+  </style>
 </head>
 <body>
-  <div class="container py-5">
- <h1 class="text-center mb-4"> NHS Resource Utilisation & Missed Appointments</h1>
-<p class="lead text-center">
-  Data-driven insights into demand, missed appointments, and public sentiment.<br>
-  <em>This project was completed as part of the LSE DA201: Diagnostic Analytics with Python course.</em>
-</p>
-<p class="text-center mt-2"><strong>Final Score:</strong> <span style="background-color: #4CAF50; color: white; padding: 4px 10px; border-radius: 6px;">89%</span></p>
+  <!-- hero ------------------------------------------------------------>
+  <header class="hero">
+    <div class="container">
+      <h1 class="display-5 mb-3">NHS Resource Utilisation &amp; Missed Appointments</h1>
+      <p class="lead mb-4">Data-driven insight into appointment demand, DNA hotspots &amp; public sentiment.<br><em>LSE DA201 Diagnostic Analytics with Python – Monica Baracho</em></p>
+      <span class="badge bg-success fs-6">Final Score 89 %</span>
+    </div>
+  </header>
 
-    <section class="my-5">
-      <h2>Executive Summary</h2>
-      <div class="card p-4 shadow-sm">
-        <p><strong>Why this matters</strong></p>
-        <ul>
-          <li>GP demand now averages <strong>25.8M appointments/month</strong> – 15% above pre-COVID levels</li>
-          <li>Clinics operate at <strong>115% of planned capacity</strong> – no slack for shocks</li>
-          <li><strong>4.7% of capacity is lost</strong> to missed appointments (DNA), mainly from short-notice and remote bookings</li>
-        </ul>
-        <p><strong>Board-level actions:</strong></p>
-        <ol>
-          <li><strong>Target DNA hotspots</strong> – SMS reminders for bookings ≤ 7 days</li>
-          <li><strong>Rebalance staffing</strong> – Shift resources to high-demand ICBs and manage seasonal peaks</li>
-          <li><strong>Monitor sentiment</strong> – Track hashtags like #NHSCrisis and #ThankYouNHS weekly</li>
-        </ol>
+  <main class="container py-5">
+    <!-- executive summary -------------------------------------------->
+    <section class="mb-5">
+      <h2 class="section-title">Executive summary</h2>
+      <div class="card shadow-sm p-4">
+        <div class="row g-3">
+          <div class="col-lg-8">
+            <p class="mb-2"><strong>Context.</strong> GP appointment demand now averages <strong>25.8&nbsp;M per month</strong>—15&nbsp;% above pre‑COVID levels—while clinics already operate at <strong>115&nbsp;% of planned capacity</strong>. Lost capacity from DNAs (~4.7&nbsp;%) compounds the strain.</p>
+            <p class="mb-2"><strong>Key findings.</strong></p>
+            <ul class="small mb-3">
+              <li>DNA risk spikes for <em>same‑week telephone &amp; video</em> bookings.</li>
+              <li>Autumn 2021 hit <strong>120&nbsp;% utilisation</strong> — evidence of structural, not seasonal, overload.</li>
+              <li>Twitter sentiment mirrors pressure cycles (#NHSCrisis peaks during utilisation spikes).</li>
+            </ul>
+            <p class="mb-2"><strong>Board‑level actions.</strong></p>
+            <ol class="small mb-0">
+              <li>Send SMS reminders for bookings ≤7 days.</li>
+              <li>Reallocate staff to high‑demand ICBs and build surge rosters.</li>
+              <li>Monitor sentiment hashtags weekly to flag emerging service‑trust issues.</li>
+            </ol>
+          </div>
+          <div class="col-lg-4 d-flex align-items-center">
+            <img src="Dashboard_Missed.png" class="img-fluid img-rounded border" alt="Missed appointments trend" loading="lazy" />
+          </div>
+        </div>
       </div>
     </section>
 
-     <section class="my-5">
-  <h2> Tools & Techniques</h2>
-
-  <p><strong>Languages & Libraries:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Statsmodels, Plotly, Dash, Geopandas, TextBlob</p>
-
-  <p><strong>Techniques Applied:</strong></p>
-  <ul>
-    <li>Descriptive statistics and exploratory data analysis (EDA)</li>
-    <li>Seasonal demand analysis using grouped bar charts by period</li>
-    <li>Logistic regression to model missed appointments (DNA)</li>
-    <li>ROC curve and AUC evaluation (AUC = 0.569)</li>
-    <li>Twitter sentiment analysis using TextBlob polarity scores</li>
-    <li>Keyword and hashtag filtering using regular expressions (regex)</li>
-    <li>Utilisation mapping and regional comparisons by ICB</li>
-    <li>Date parsing and classification into seasonal categories using <code>datetime</code></li>
-    <li>Interactive dashboard design using Plotly and JupyterDash (prototype stage)</li>
-  </ul>
-</section>
-
-   <section class="my-5">
-  <h2> Dashboard Highlights</h2>
-
-  <h5 class="mt-4">KPIs Overview</h5>
-  <img src="Dashboard_KPI.png" class="img-fluid rounded border mb-2" alt="KPI Dashboard">
-  <p class="text-muted fst-italic">
-    This dashboard summarises key NHS performance indicators from August 2021 to June 2022. Clinics handled an average of 25.8 million appointments/month, with a peak of 29.1 million in November. Face-to-face care still made up 61.7% of visits, while 90.7% of all appointments were delivered by GPs. The missed appointment (DNA) rate was 4.69%. Significant regional inequality is visible: Cornwall led with 6,201 appointments per 1,000 people, while South East London trailed at just 3,850.
-  </p>
-
-  <h5>Capacity Utilisation vs Planning Limit</h5>
-  <img src="Dashboard_Capacity.png" class="img-fluid rounded border mb-2" alt="Capacity Chart">
-  <p class="text-muted fst-italic">
-    NHS services consistently operated over capacity. Monthly utilisation breached 100% regularly, reaching a critical 120% in October 2021. Even quieter months stayed close to full, confirming structural overuse rather than temporary surges. This supports the case for flexible staffing and strategic surge planning.
-  </p>
-
-  <h5>Detailed Capacity Utilisation</h5>
-<img src="Dashboard_Utilization.png" class="img-fluid rounded border mb-2" alt="Utilisation Detail Chart">
-<p class="text-muted fst-italic">
-  This chart offers a more granular view of how NHS appointment volumes exceeded planned capacity across regions and time.
-  Persistent over-utilisation beyond 100% confirms that system pressure is not isolated to seasonal peaks but reflects an ongoing resource gap.
-  This visual supports arguments for structural staffing reforms and flexible surge management.
-</p>
-
-
-  <h5>Missed Appointments Trends</h5>
-  <img src="Dashboard_Missed.png" class="img-fluid rounded border mb-2" alt="Missed Appointments Chart">
-  <p class="text-muted fst-italic">
-    Monthly missed appointments (DNAs) ranged between 4.2% and 5.18%, with an October 2021 spike of over 1.5 million no-shows. Logistic regression confirmed that short-notice bookings (especially same-day) and remote formats like telephone/video were the strongest predictors of DNA risk.
-  </p>
-
-     <section class="my-5">
-  <h2> Appointment Volume by Season</h2>
-
-  <p>
-    Seasonal variation plays a significant role in NHS service pressure. The bar charts below compare total and average 
-    monthly appointments by season across the dataset timeframe (Aug 2021–Jun 2022).
-  </p>
-
-  <img src="Dashboard_Season.png" alt="Seasonal Appointment Volume" class="img-fluid rounded border mb-3">
-
-  <p class="text-muted fst-italic">
-    Autumn and Winter had the highest appointment volumes, with Autumn peaking at nearly 90 million. This aligns with post-lockdown recovery 
-    and seasonal illness trends. June and August, as standalone months, saw noticeably lower volume, consistent with holiday effects.
-  </p>
-</section>
-
-<section class="my-5">
-  <h5> Predicting Missed Appointments</h5>
-
-  <p>
-    To better understand what increases the likelihood of missed appointments (DNA), I trained a logistic regression model 
-    using post-lockdown appointment data. The chart below shows the odds ratios for various predictors.
-  </p>
-
-  <img src="Dashboard_Regression.png" alt="Logistic Regression Odds Ratios" class="img-fluid rounded border mb-3">
-
-  <p class="text-muted fst-italic">
-    This analysis revealed that telephone and video/online appointments had a significantly higher likelihood of being missed, 
-    compared to face-to-face. Weekday and lead time (days_before_appointment) also influenced DNA risk. The model's AUC score was 0.569, 
-    suggesting moderate predictive power. These insights can support targeted interventions like reminders for short-notice or remote bookings.
-  </p>
-</section>
-
-  <p>
-    In addition to internal NHS data, Twitter posts mentioning NHS-related keywords were analysed using sentiment scoring 
-    and hashtag frequency. This helped contextualize public discourse around healthcare access and perception.
-  </p>
-
-  <h2>Public Sentiment – Twitter Hashtags</h2>
-  <img src="Dashboard_Twitter.png" class="img-fluid rounded border mb-2" alt="Twitter Hashtags">
-  <p class="text-muted fst-italic">
-    Twitter sentiment focused heavily on general healthcare (#healthcare), digital transformation (#digitalhealth, #AI), and workforce challenges (#job, #staffing). These trends aligned with NHS performance dips and policy moments, validating social media as a real-time feedback loop for public trust and system strain.
-  </p>
-</section>
-    
-<div class="mt-4">
-  <p class="fw-light fst-italic text-muted">
-    💡 <strong>How to use this notebook:</strong><br>
-    This live preview displays the full Jupyter Notebook used in the analysis. It includes:
-  </p>
-  <ul class="text-muted">
-    <li> All data cleaning and preparation steps using Python (Pandas)</li>
-    <li> Visualisation of trends using Matplotlib and Seaborn</li>
-    <li> A logistic regression model to predict missed appointments (DNA)</li>
-    <li>Twitter sentiment analysis using VADER</li>
-  </ul>
-  <p class="fw-light fst-italic text-muted">
-    You can scroll through the notebook below to see all code cells, visual outputs, and commentary.<br>
-  </p>
-
-<section class="my-5">
-  <h2> Live HTML Notebook Preview</h2>
-  <iframe src="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" width="100%" height="700" style="border:1px solid #ccc;"></iframe>
-  <p class="mt-3">
-    <a href="Baracho_Monica_DA201_Assignment_Report.pdf" target="_blank" class="btn btn-outline-primary me-2"> Download Full Report (PDF)</a>
-    <a href="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" target="_blank" class="btn btn-outline-success me-2">🌐 Open Notebook in New Tab</a>
-    <a href="Baracho_Monica_DA201_Assignment_Notebook.ipynb" target="_blank" class="btn btn-outline-dark"> Download Jupyter Notebook (.ipynb)</a>
-  </p>
-</section>
-
-
-    <div class="text-center mt-5">
-      <a href="index.html" class="btn btn-outline-dark">⬅ Back to Portfolio Home</a>
+    <!-- KPI row ------------------------------------------------------->
+    <h2 class="section-title">Headline KPIs</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card metric-card p-3">
+          <p class="small text-muted mb-1">Avg appointments / month</p>
+          <p class="metric-value">25.8 M</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card metric-card p-3">
+          <p class="small text-muted mb-1">Utilisation vs plan</p>
+          <p class="metric-value">115 %</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card metric-card p-3">
+          <p class="small text-muted mb-1">Capacity lost to DNA</p>
+          <p class="metric-value">4.7 %</p>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
-</html>
+
+    <!-- toolkit & actions row ---------------------------------------->
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <h3 class="h5 fw-bold mb-2">Analytics toolkit</h3>
+        <p class="small">Python · Pandas · Plotly Dash · Scikit‑learn (logit AUC 0.57) · GeoPandas · TextBlob sentiment.</p>
+      </div>
+      <div class="col-lg-6">
+        <h3 class="h5 fw-bold mb-2">Priority plays</h3>
+        <ul class="list-unstyled small">
+          <li>📱 SMS nudges for short‑notice DNA hotspots</li>
+          <li>👩‍⚕️ Shift GP sessions to demand‑heavy ICBs</li>
+          <li>📊 Weekly hashtag tracker for public sentiment</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- dashboard block ---------------------------------------------->
+    <h2 class="section-title mt-5">Dashboard snapshots</h2>
+    <figure class="mb-4">
+      <img src="Dashboard_KPI.png" class="img-fluid img-rounded border" loading="lazy" alt="KPI dashboard" />
+      <figcaption class="small text-muted mt-2">KPIs Aug 2021 – Jun 2022. Cornwall leads with 6 201 appts /1 000 pop; SE London trails at 3 850.</figcaption>
+    </figure>
+
+    <figure class="mb-4">
+      <img src="Dashboard_Capacity.png" class="img-fluid img-rounded border" loading="lazy" alt="Utilisation vs plan" />
+      <figcaption class="small text-muted mt-2">Capacity breaches 100 % most months, peaking at 120 % in Oct 2021.</figcaption>
+    </figure>
+
+    <figure class="mb-4">
+      <img src="Dashboard_Missed.png" class="img-fluid img-rounded border" loading="lazy" alt="Missed appointment chart" />
+      <figcaption class="small text-muted mt-2">DNAs steady at ~4.7 %; spike to >1.5 M in Oct 2021.</figcaption>
+    </figure>
+
+    <!-- notebook & downloads ----------------------------------------->
+    <h2 class="section-title mt-5">Explore the analysis</h2>
+    <iframe src="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" title="Interactive NHS notebook" width="100%" height="600" loading="lazy" style="border:1px solid #ccc"></iframe>
+    <div class="d-flex flex-wrap gap-2 mt-3">
+      <a href="Baracho_Monica_DA201_Assignment_Report.pdf" target="_blank" rel="noopener" class="btn btn-outline-primary">Download report (PDF)</a>
+      <a href="Baracho_Monica_LSEDA201_Assignment_Notebook-6.html" target="_blank" rel="noopener" class="btn btn-outline-success">Open notebook</a>
+      <a href="Baracho_Monica_DA201_Assignment_Notebook.ipynb" target="_blank" rel="noopener" class="btn btn-outline-dark">Raw .ipynb</a>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 text-muted">
+    © 2025 Monica Baracho · <a href="index.html" class="text-reset">Portfolio home</a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6DQIsI
