@@ -27,15 +27,15 @@
       <div class="card p-4 shadow-sm">
         <p><strong>Why this matters</strong></p>
         <ul>
-          <li>GP demand now averages <strong>25.8M appointments/month</strong> – 15% above pre-COVID levels</li>
-          <li>Clinics operate at <strong>115% of planned capacity</strong> – no slack for shocks</li>
-          <li><strong>4.7% of capacity is lost</strong> to missed appointments (DNA), mainly from short-notice and remote bookings</li>
+          <li>GP demand averages <strong>25.8M appointments/month</strong> – 15% above pre-COVID levels.</li>
+          <li>Clinics operate at <strong>115% of planned capacity</strong> – leaving no slack for shocks.</li>
+          <li><strong>4.7% of capacity is lost</strong> to missed appointments (DNA), mainly from short-notice and remote bookings.</li>
         </ul>
         <p><strong>Board-level actions:</strong></p>
         <ol>
-          <li><strong>Target DNA hotspots</strong> – SMS reminders for bookings ≤ 7 days</li>
-          <li><strong>Rebalance staffing</strong> – Shift resources to high-demand ICBs and manage seasonal peaks</li>
-          <li><strong>Monitor sentiment</strong> – Track hashtags like #NHSCrisis and #ThankYouNHS weekly</li>
+          <li><strong>Target DNA hotspots</strong> – SMS reminders for bookings ≤ 7 days.</li>
+          <li><strong>Rebalance staffing</strong> – Shift resources to high-demand ICBs and manage seasonal peaks.</li>
+          <li><strong>Monitor sentiment</strong> – Track hashtags like #NHSCrisis and #ThankYouNHS weekly.</li>
         </ol>
       </div>
     </section>
@@ -50,11 +50,11 @@
         <li>Seasonal demand analysis (bar charts by period)</li>
         <li>Logistic regression to model DNAs</li>
         <li>ROC curve and AUC evaluation (AUC = 0.569)</li>
-        <li>Twitter sentiment analysis with TextBlob</li>
-        <li>Hashtag filtering using regex</li>
-        <li>Utilisation mapping and ICB comparisons</li>
+        <li>Twitter sentiment analysis (TextBlob polarity scores)</li>
+        <li>Hashtag filtering with regex</li>
+        <li>Utilisation mapping & ICB comparisons</li>
         <li>Date parsing and seasonal categorisation</li>
-        <li>Prototype dashboards using Plotly & JupyterDash</li>
+        <li>Prototype dashboards with Plotly & JupyterDash</li>
       </ul>
     </section>
 
@@ -65,27 +65,27 @@
       <h5 class="mt-4">KPIs Overview</h5>
       <img src="Dashboard_KPI.png" class="img-fluid rounded border mb-2" alt="KPI Dashboard">
       <p class="text-muted fst-italic">
-        From Aug 2021–Jun 2022: 25.8M avg. appointments/month, peaking at 29.1M. 
-        Face-to-face = 61.7%, GP-led = 90.7%. DNA rate = 4.69%. Cornwall led (6,201 per 1k), South East London trailed (3,850 per 1k).
+        From Aug 2021–Jun 2022: avg. 25.8M appointments/month, peaking at 29.1M. 
+        Face-to-face = 61.7%, GP-led = 90.7%. DNA rate = 4.69%. Cornwall = 6,201 per 1k, South East London = 3,850 per 1k.
       </p>
 
       <h5>Capacity Utilisation vs Planning Limit</h5>
       <img src="Dashboard_Capacity.png" class="img-fluid rounded border mb-2" alt="Capacity Chart">
       <p class="text-muted fst-italic">
-        NHS operated above 100% planned capacity throughout, peaking at 120% in Oct 2021 — evidence of structural overuse.
+        NHS operated above 100% planned capacity throughout, peaking at 120% in Oct 2021 — clear evidence of structural overuse.
       </p>
 
       <h5>Detailed Capacity Utilisation</h5>
       <img src="Dashboard_Utilization.png" class="img-fluid rounded border mb-2" alt="Utilisation Detail Chart">
       <p class="text-muted fst-italic">
-        Persistent over-utilisation across regions confirms systemic pressure, not isolated seasonal peaks.
+        Persistent over-utilisation across regions confirms ongoing systemic pressure, not just seasonal peaks.
       </p>
 
       <h5>Missed Appointments Trends</h5>
       <img src="Dashboard_Missed.png" class="img-fluid rounded border mb-2" alt="Missed Appointments Chart">
       <p class="text-muted fst-italic">
         DNAs ranged 4.2–5.18%, spiking at 1.5M in Oct 2021. 
-        Logistic regression confirmed short-notice and remote bookings as strongest predictors.
+        Logistic regression showed short-notice and remote bookings as strongest predictors.
       </p>
     </section>
 
@@ -94,7 +94,7 @@
       <h2>Appointment Volume by Season</h2>
       <img src="Dashboard_Season.png" alt="Seasonal Appointment Volume" class="img-fluid rounded border mb-3">
       <p class="text-muted fst-italic">
-        Autumn & Winter had the highest volumes (~90M). June and August dipped due to holidays.
+        Autumn & Winter saw the highest volumes (~90M). June and August dipped due to holidays.
       </p>
     </section>
 
@@ -103,9 +103,8 @@
       <h2>Predicting Missed Appointments</h2>
       <img src="Dashboard_Regression.png" alt="Logistic Regression Odds Ratios" class="img-fluid rounded border mb-3">
       <p class="text-muted fst-italic">
-        Telephone and video bookings had higher DNA risk vs face-to-face. 
-        Lead time (days before booking) also mattered. 
-        AUC = 0.569, indicating moderate predictive power.
+        Telephone & video bookings had higher DNA risk than face-to-face. 
+        Lead time also influenced risk. AUC = 0.569, showing moderate predictive power.
       </p>
     </section>
 
@@ -114,8 +113,8 @@
       <h2>Public Sentiment – Twitter Hashtags</h2>
       <img src="Dashboard_Twitter.png" class="img-fluid rounded border mb-2" alt="Twitter Hashtags">
       <p class="text-muted fst-italic">
-        Conversations focused on #healthcare, #digitalhealth, and workforce issues (#job, #staffing). 
-        Peaks aligned with NHS performance dips and policy debates, showing social media as a proxy for trust.
+        Conversations centred on #healthcare, #digitalhealth, and workforce issues (#job, #staffing). 
+        Peaks aligned with NHS dips and policy debates, confirming social media as a real-time feedback loop.
       </p>
     </section>
 
@@ -138,4 +137,3 @@
   </div>
 </body>
 </html>
-
