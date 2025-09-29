@@ -8,30 +8,58 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container py-5">
+  <!-- Hero Section -->
+  <section class="bg-primary text-white text-center py-5 mb-5">
+    <h1 class="display-5">Turtle Games – Loyalty & Segmentation Analysis</h1>
+    <p class="lead">Predictive modelling, customer segmentation, and sentiment analysis of 2,000+ customers & reviews</p>
+    <span class="badge bg-success fs-6">Distinction</span>
+  </section>
 
-    <!-- Page Header -->
-    <h1 class="text-center mb-4">Turtle Games – Loyalty & Segmentation Analysis</h1>
-    <p class="lead text-center">
-      Predictive modelling, segmentation, and sentiment analysis on 2,000 customers and reviews.<br>
-      <em>This project was completed as part of the LSE DA301: Advanced Analytics for Business course.</em>
-    </p>
-    <p class="text-center mt-2"><strong>Final Score:</strong> 
-      <span style="background-color: #4CAF50; color: white; padding: 4px 10px; border-radius: 6px;">Distinction</span>
-    </p>
+  <div class="container">
+
+    <!-- Business Problem -->
+    <section class="my-5">
+      <h2>Business Problem</h2>
+      <div class="card p-4 shadow-sm">
+        <p>
+          Turtle Games, a global board-game manufacturer and retailer, wanted to improve overall sales performance 
+          by strengthening customer loyalty. While the company collected rich data on demographics, spending behaviour, 
+          loyalty points, and thousands of product reviews, it lacked clarity on:
+        </p>
+        <ul>
+          <li>⚡ Which factors drive loyalty point accumulation?</li>
+          <li>👥 How to segment customers into actionable groups for marketing?</li>
+          <li>💬 What customers are saying in reviews, and how feedback could guide campaigns?</li>
+        </ul>
+        <p>
+          My analysis addressed these questions using predictive modelling, clustering, and sentiment analysis. 
+          The goal was to deliver evidence-based recommendations for loyalty schemes, VIP offers, and targeted marketing.
+        </p>
+      </div>
+    </section>
+
+    <!-- At a Glance -->
+    <section class="my-5">
+      <h2 class="text-center mb-4">At a Glance</h2>
+      <div class="row text-center">
+        <div class="col-md-3"><div class="card shadow-sm p-3"><strong>R²</strong><p class="fs-4 mb-0">0.84</p><small>Linear Regression</small></div></div>
+        <div class="col-md-3"><div class="card shadow-sm p-3"><strong>AUC</strong><p class="fs-4 mb-0">0.99</p><small>Logistic Model</small></div></div>
+        <div class="col-md-3"><div class="card shadow-sm p-3"><strong>2,000</strong><p class="fs-4 mb-0">Customers</p></div></div>
+        <div class="col-md-3"><div class="card shadow-sm p-3"><strong>2,000</strong><p class="fs-4 mb-0">Reviews</p></div></div>
+      </div>
+    </section>
 
     <!-- Executive Summary -->
     <section class="my-5">
       <h2>Executive Summary</h2>
       <div class="card p-4 shadow-sm">
-        <p><strong>Why this matters</strong></p>
         <ul>
-          <li><strong>Spending score</strong> is the strongest driver of loyalty (β ≈ 34).</li>
-          <li><strong>Mid-income customers (£50–70k)</strong> show the highest loyalty engagement.</li>
-          <li>Income effect plateaus after £70k → diminishing returns on loyalty.</li>
-          <li>Sentiment analysis shows mostly positive reviews (avg polarity +0.12) but flags issues with rules and product quality.</li>
+          <li>Spending score is the strongest driver of loyalty.</li>
+          <li>£50–70k income customers = “sweet spot” for engagement.</li>
+          <li>Decision tree confirms spending > income > demographics.</li>
+          <li>Review sentiment positive overall (+0.12 polarity) but highlights issues with rules clarity and product quality.</li>
         </ul>
-        <p><strong>Board-level actions:</strong></p>
+        <p><strong>Board-level Actions:</strong></p>
         <ol>
           <li><strong>Target engaged spenders</strong> with bonus multipliers, regardless of income.</li>
           <li><strong>Focus loyalty budget</strong> on the £50–70k “sweet spot” segment.</li>
@@ -40,75 +68,58 @@
       </div>
     </section>
 
-    <!-- Tools & Techniques -->
+    <!-- Visuals -->
     <section class="my-5">
-      <h2>Tools & Techniques</h2>
-      <p><strong>Languages & Libraries:</strong> Python (pandas, seaborn, scikit-learn, TextBlob), R (ggplot2, caret)</p>
-      <p><strong>Techniques Applied:</strong></p>
-      <ul>
-        <li>Exploratory Data Analysis (EDA) and KPI dashboards</li>
-        <li>Multiple Linear Regression (R² = 0.84)</li>
-        <li>Decision Tree (R² = 0.94) for loyalty prediction</li>
-        <li>Logistic Regression (AUC ≈ 0.99) to identify high-value customers</li>
-        <li>K-means clustering → 3 clear customer segments</li>
-        <li>Sentiment analysis and Named Entity Recognition on 2,000+ reviews</li>
-      </ul>
+      <h2 class="mb-4 text-center">Highlights & Visuals</h2>
+
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h5>Income vs Loyalty Points</h5>
+          <img src="Income vs Loyalty Scatter.png" class="img-fluid rounded border" alt="Income vs Loyalty">
+        </div>
+        <div class="col-md-6">
+          <h5>Predicted vs Actual Loyalty Points</h5>
+          <img src="Predict Vs Actual Lotalty Points.png" class="img-fluid rounded border" alt="Regression Fit">
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h5>Predicted Loyalty for a New Customer</h5>
+          <img src="New Customer Prediction.png" class="img-fluid rounded border" alt="New Customer Prediction">
+        </div>
+        <div class="col-md-6">
+          <h5>K-means Segmentation (k=3)</h5>
+          <img src="K-means Segmentation Plot (k=3).png" class="img-fluid rounded border" alt="Customer Segments">
+        </div>
+      </div>
+
+      <h5>Top Entities in Customer Reviews</h5>
+      <img src="Top 15 Named Entities in Reviews.png" class="img-fluid rounded border mb-2" alt="NER Reviews">
     </section>
 
-    <!-- Dashboard Highlights -->
-   <section class="my-5">
-  <h2>Highlights & Visuals</h2>
-
-  <h5 class="mt-4">Income vs Loyalty Points</h5>
-  <img src="Income vs Loyalty Scatter.png" class="img-fluid rounded border mb-2" alt="Income vs Loyalty">
-  <p class="text-muted fst-italic">
-    Customers in the £50–70k income band show the strongest loyalty engagement. Returns flatten after ~£70k.
-  </p>
-
-  <h5>Predicted vs Actual Loyalty Points</h5>
-  <img src="Predict Vs Actual Lotalty Points.png" class="img-fluid rounded border mb-2" alt="Regression Fit">
-  <p class="text-muted fst-italic">
-    Regression explains 84% of loyalty variation. Spending score dominates; model tracks customers closely.
-  </p>
-
-  <h5>Predicted Loyalty for a New Customer</h5>
-  <img src="New Customer Prediction.png" class="img-fluid rounded border mb-2" alt="New Customer Prediction">
-  <p class="text-muted fst-italic">
-    Example: A 35 y/o, £55k income, spending score = 60 → predicted at ~2,100 points, just above the high-value threshold.
-  </p>
-
-  <h5>K-means Segmentation (k=3)</h5>
-  <img src="K-means Segmentation Plot (k=3).png" class="img-fluid rounded border mb-2" alt="Customer Segments">
-  <p class="text-muted fst-italic">
-    Three groups: High-income high-spend VIPs, mid-income core spenders, and high-income low-spenders.
-  </p>
-
-  <h5>Top Entities in Customer Reviews</h5>
-  <img src="Top 15 Named Entities in Reviews.png" class="img-fluid rounded border mb-2" alt="NER Reviews">
-  <p class="text-muted fst-italic">
-    Reviews highlight D&D, UNO, and Lords of Waterdeep as most frequently mentioned games.
-  </p>
-</section>
-
-
-    <!-- Live Notebook Preview -->
+    <!-- Notebook Embed -->
     <section class="my-5">
-      <h2>Live HTML Notebook Preview</h2>
+      <h2 class="mb-4 text-center">Live Notebook Preview</h2>
       <iframe src="Baracho_Monica_DA301_Assignment-5.html" width="100%" height="700" style="border:1px solid #ccc;"></iframe>
-      <p class="mt-3">
-        <a href="Baracho_Monica_DA301_Assignment_Report.pdf" target="_blank" class="btn btn-outline-primary me-2"> Download Full Report (PDF)</a>
-        <a href="Baracho_Monica_DA301_Assignment-5.html" target="_blank" class="btn btn-outline-success me-2">Open Notebook in New Tab</a>
-        <a href="Baracho_Monica_DA301_Assignment.ipynb" target="_blank" class="btn btn-outline-dark me-2"> Download Jupyter Notebook (.ipynb)</a>
-        <a href="Baracho_Monica_Assignment.R" target="_blank" class="btn btn-outline-secondary me-2">Download R Script</a>
-        <a href="Turtle_Games_Analytics.pptx" target="_blank" class="btn btn-outline-info">Download Slides (PPTX)</a>
-      </p>
+      <div class="text-center mt-3">
+        <a href="Baracho_Monica_DA301_Assignment_Report.pdf" target="_blank" class="btn btn-outline-primary me-2"> Report</a>
+        <a href="Baracho_Monica_DA301_Assignment-5.html" target="_blank" class="btn btn-outline-success me-2"> Notebook</a>
+        <a href="Baracho_Monica_DA301_Assignment.ipynb" target="_blank" class="btn btn-outline-dark me-2"> .ipynb</a>
+        <a href="Baracho_Monica_Assignment.R" target="_blank" class="btn btn-outline-secondary me-2"> R Script</a>
+        <a href="Turtle_Games_Analytics.pptx" target="_blank" class="btn btn-outline-info">Slides</a>
+      </div>
     </section>
 
-    <!-- Back to portfolio -->
+    <!-- Back -->
     <div class="text-center mt-5">
       <a href="index.html" class="btn btn-outline-dark">⬅ Back to Portfolio Home</a>
     </div>
+
   </div>
+
+  <footer class="text-center py-3 bg-primary text-white mt-5">
+    &copy; 2025 Monica Baracho
+  </footer>
 </body>
 </html>
-
