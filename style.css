@@ -1,49 +1,129 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa;
+/* ==========================================================================
+   1. CSS RESET + BASE TOKENS
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+              Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height:1.6;
+  background:#fff;
+  color:#222;
+  -webkit-font-smoothing:antialiased;
 }
 
-.hero {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    height: 60vh;
-    text-align: center;
-    padding: 2rem;
-    color: white;
+:root{
+  /* -------- Brand palette -------- */
+  --clr-primary:#4f45ff;          /* main accent */
+  --clr-primary-dark:#6159ff;
+  --clr-secondary:#00c6a2;
+  --clr-bg:#f9f9fb;
+  --clr-muted:#6c757d;
+  --clr-light:#ffffff;
+
+  /* -------- Layout -------- */
+  --radius:.6rem;
+  --shadow-sm:0 2px 8px rgb(0 0 0 / .05);
+  --shadow-md:0 4px 18px rgb(0 0 0 / .08);
+
+  /* -------- Type scale -------- */
+  --fs-900:clamp(2.6rem,5vw+1rem,3.5rem);
+  --fs-700:1.875rem;  /* h2 */
+  --fs-600:1.25rem;   /* lead */
+  --fs-500:1rem;      /* body */
 }
 
-.hero .btn {
-    background-color: white;
-    color: #2575fc;
-    font-weight: bold;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+/* ==========================================================================
+   2. GLOBAL ELEMENTS
+   ========================================================================== */
+h1,h2,h3,h4,h5,h6{font-weight:700;color:#111;margin-bottom:.5em}
+h1{font-size:var(--fs-900);line-height:1.15}
+h2{font-size:var(--fs-700);line-height:1.25}
+p{font-size:var(--fs-500);margin-bottom:1rem}
+p.lead{font-size:var(--fs-600);max-width:60ch;margin-inline:auto}
+
+a{color:var(--clr-primary);text-decoration:none}
+a:hover{text-decoration:underline;color:var(--clr-primary-dark)}
+
+img{max-width:100%;display:block;border-radius:var(--radius)}
+
+/* Helpful anchor offset for linked sections */
+section{scroll-margin-top:5rem;padding-block:4rem}
+.container-narrow{max-width:980px;margin-inline:auto}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero{
+  min-height:70vh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:2rem 1rem;
+  color:#fff;
+  background:linear-gradient(135deg,var(--clr-primary) 0%,var(--clr-secondary) 100%);
+}
+.hero .btn-link{color:#fff;font-weight:600}
+.hero .btn-link:hover{color:#ffe;text-decoration:none}
+
+/* ==========================================================================
+   4. COMPONENTS
+   ========================================================================== */
+/* ----- Buttons ----------------------------------------------------------- */
+.btn-primary{
+  --bs-btn-bg:var(--clr-primary);
+  --bs-btn-border-color:var(--clr-primary);
+  --bs-btn-hover-bg:var(--clr-primary-dark);
+  --bs-btn-hover-border-color:var(--clr-primary-dark);
+  --bs-btn-focus-shadow-rgb:79,69,255;
+}
+.btn-outline-primary{--bs-btn-hover-bg:var(--clr-primary);--bs-btn-hover-color:#fff}
+.btn-outline-success{--bs-btn-hover-bg:var(--clr-secondary);--bs-btn-hover-color:#fff}
+
+/* ----- Card -------------------------------------------------------------- */
+.card{
+  border:none;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  background:var(--clr-light);
+}
+.card:hover{
+  box-shadow:var(--shadow-md);
+  transform:translateY(-2px);
+  transition:.25s;
+}
+.card h5{margin-top:0}
+
+/* ----- Navbar (if you add one) ------------------------------------------ */
+.navbar-custom{
+  background:#111;
+}
+.navbar-custom .nav-link{color:#ddd}
+.navbar-custom .nav-link:hover{color:#fff}
+
+/* ----- Footer ------------------------------------------------------------ */
+footer{
+  background:var(--clr-primary);
+  color:#fff;
+  font-size:.9rem;
+}
+footer a{color:#fff;text-decoration:underline}
+footer a:hover{text-decoration:none}
+
+/* ==========================================================================
+   5. UTILITIES
+   ========================================================================== */
+.text-muted-sm{color:var(--clr-muted);font-size:.9rem}
+.shadow-sm{box-shadow:var(--shadow-sm)!important}
+.rounded-md{border-radius:var(--radius)!important}
+.max-w-60ch{max-width:60ch}
+
+/* ==========================================================================
+   6. MEDIA QUERIES
+   ========================================================================== */
+@media (min-width:768px){
+  .hero{padding-inline:4rem}
+  .card-columns{column-count:2}
+}
+@media (min-width:992px){
+  .hero{min-height:75vh}
 }
 
-.hero .btn:hover {
-    transform: scale(1.1);
-    background-color: #f0f0f0;
-}
-
-.card {
-    border: none;
-    border-radius: 0.5rem;
-}
-
-.card-body {
-    padding: 1rem;
-}
-
-.card-title {
-    font-weight: bold;
-}
-
-footer {
-    background-color: #343a40;
-    color: white;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-}
-
-html {
-    scroll-behavior: smooth;
-}
