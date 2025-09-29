@@ -56,30 +56,40 @@
     </section>
 
     <!-- Dashboard Highlights -->
-    <section class="my-5">
-      <h2>Highlights & Visuals</h2>
+   <section class="my-5">
+  <h2>Highlights & Visuals</h2>
 
-      <h5 class="mt-4">Regression: Predicting Loyalty Points</h5>
-      <img src="turtle_regression.png" class="img-fluid rounded border mb-2" alt="Regression Plot">
-      <p class="text-muted fst-italic">
-        The regression explains 84% of loyalty point variation. Spending score dominates as a predictor,
-        with income tapering off after ~£70k.
-      </p>
+  <h5 class="mt-4">Income vs Loyalty Points</h5>
+  <img src="Income vs Loyalty Scatter.png" class="img-fluid rounded border mb-2" alt="Income vs Loyalty">
+  <p class="text-muted fst-italic">
+    Customers in the £50–70k income band show the strongest loyalty engagement. Returns flatten after ~£70k.
+  </p>
 
-      <h5>Customer Segmentation (K-means)</h5>
-      <img src="turtle_clusters.png" class="img-fluid rounded border mb-2" alt="Cluster Segmentation">
-      <p class="text-muted fst-italic">
-        Three segments emerged: (1) high-income/high-spend VIPs, (2) mid-income core spenders, 
-        (3) high-income low-spenders. Behavioural engagement, not demographics, drives value.
-      </p>
+  <h5>Predicted vs Actual Loyalty Points</h5>
+  <img src="Predict Vs Actual Lotalty Points.png" class="img-fluid rounded border mb-2" alt="Regression Fit">
+  <p class="text-muted fst-italic">
+    Regression explains 84% of loyalty variation. Spending score dominates; model tracks customers closely.
+  </p>
 
-      <h5>Customer Sentiment</h5>
-      <img src="turtle_wordcloud.png" class="img-fluid rounded border mb-2" alt="Review Word Cloud">
-      <p class="text-muted fst-italic">
-        Positive themes dominate (“fun”, “great”, “love”), while negative mentions highlight 
-        rule complexity and quality concerns. Popular games include D&D, UNO, and Lords of Waterdeep.
-      </p>
-    </section>
+  <h5>Predicted Loyalty for a New Customer</h5>
+  <img src="New Customer Prediction.png" class="img-fluid rounded border mb-2" alt="New Customer Prediction">
+  <p class="text-muted fst-italic">
+    Example: A 35 y/o, £55k income, spending score = 60 → predicted at ~2,100 points, just above the high-value threshold.
+  </p>
+
+  <h5>K-means Segmentation (k=3)</h5>
+  <img src="K-means Segmentation Plot (k=3).png" class="img-fluid rounded border mb-2" alt="Customer Segments">
+  <p class="text-muted fst-italic">
+    Three groups: High-income high-spend VIPs, mid-income core spenders, and high-income low-spenders.
+  </p>
+
+  <h5>Top Entities in Customer Reviews</h5>
+  <img src="Top 15 Named Entities in Reviews.png" class="img-fluid rounded border mb-2" alt="NER Reviews">
+  <p class="text-muted fst-italic">
+    Reviews highlight D&D, UNO, and Lords of Waterdeep as most frequently mentioned games.
+  </p>
+</section>
+
 
     <!-- Live Notebook Preview -->
     <section class="my-5">
