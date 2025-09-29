@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NHS Resource Utilisation & Missed Appointments</title>
+  <title>NHS Resource Utilisation &amp; Missed Appointments</title>
 
-  <!---- Bootstrap –-->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!---- OPTIONAL: icons / animation –-->
+  <!-- Optional icon / animation libs (un-comment if you use them) -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
 
-  <!---- Your main stylesheet (keep if you already have one) –-->
+  <!-- Your custom stylesheet -->
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* ───────── Hero ───────── */
+    /* ─────── Hero banner ─────── */
     .hero{
       background:linear-gradient(135deg,#007bff 0%,#00c6a2 100%);
       min-height:75vh;
@@ -26,8 +26,8 @@
     .hero a{color:#fff;font-weight:600;text-decoration:none}
     .hero a:hover{text-decoration:underline;color:#ffe}
 
-    /* ───────── Global tweaks ───────── */
-    section{scroll-margin-top:80px}      /* nice anchor offset */
+    /* ─────── Global tweaks ─────── */
+    section{scroll-margin-top:80px}   /* smooth anchor offset */
     h1,h2,h3{font-weight:700}
   </style>
 </head>
@@ -40,9 +40,9 @@
     <h1 class="display-5 mb-3">NHS Resource Utilisation &amp; Missed Appointments</h1>
     <p class="lead mb-3">
       Data-driven insights on capacity strain, DNA hotspots &amp; public sentiment.<br>
-      <em>LSE DA201 Diagnostic Analytics with Python</em>
+      <em>LSE DA201&nbsp;Diagnostic Analytics with Python</em>
     </p>
-    <a href="#exec">Explore&nbsp;Key Findings ↓</a>
+    <a href="#exec">Explore&nbsp;Key&nbsp;Findings ↓</a>
   </div>
 </section>
 
@@ -55,13 +55,13 @@
       <ul>
         <li>GP demand now averages <strong>25.8 M appointments/month</strong> – 15 % above pre-COVID levels</li>
         <li>Clinics operate at <strong>115 % of planned capacity</strong> – no slack for shocks</li>
-        <li><strong>4.7 % of capacity is lost</strong> to missed appointments (DNA), mainly from short-notice and remote bookings</li>
+        <li><strong>4.7 % of capacity is lost</strong> to missed appointments (DNA), mainly short-notice &amp; remote bookings</li>
       </ul>
       <p><strong>Board-level actions</strong></p>
       <ol>
         <li><strong>Target DNA hotspots</strong> – SMS reminders for bookings ≤ 7 days</li>
-        <li><strong>Re-balance staffing</strong> – Shift resources to high-demand ICBs and manage seasonal peaks</li>
-        <li><strong>Monitor sentiment</strong> – Track hashtags like <code>#NHSCrisis</code> and <code>#ThankYouNHS</code> weekly</li>
+        <li><strong>Re-balance staffing</strong> – shift resources to high-demand ICBs &amp; manage seasonal peaks</li>
+        <li><strong>Monitor sentiment</strong> – track hashtags <code>#NHSCrisis</code>, <code>#ThankYouNHS</code></li>
       </ol>
     </div>
   </div>
@@ -74,13 +74,13 @@
     <p><strong>Languages &amp; Libraries:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Statsmodels, Plotly, Dash, Geopandas, TextBlob</p>
     <p><strong>Techniques Applied:</strong></p>
     <ul>
-      <li>Descriptive statistics and exploratory data analysis (EDA)</li>
-      <li>Seasonal demand analysis using grouped bar charts by period</li>
-      <li>Logistic regression to model missed appointments (DNA)</li>
-      <li>ROC curve and AUC evaluation (AUC = 0.569)</li>
-      <li>Twitter sentiment analysis using TextBlob polarity scores</li>
-      <li>Keyword and hashtag filtering via regex</li>
-      <li>Utilisation mapping and regional comparisons by ICB</li>
+      <li>Descriptive statistics &amp; exploratory data analysis (EDA)</li>
+      <li>Seasonal demand analysis with grouped bar charts</li>
+      <li>Logistic regression modelling DNA risk</li>
+      <li>ROC curve / AUC evaluation (AUC = 0.569)</li>
+      <li>Twitter sentiment analysis (TextBlob polarity)</li>
+      <li>Regex keyword &amp; hashtag filtering</li>
+      <li>Utilisation mapping &amp; regional comparison by ICB</li>
       <li>Interactive dashboard prototype in JupyterDash</li>
     </ul>
   </div>
@@ -93,7 +93,7 @@
 
     <h5 class="mt-4">KPIs Overview</h5>
     <img src="Dashboard_KPI.png" class="img-fluid rounded border mb-2" alt="KPI Dashboard">
-    <p class="text-muted fst-italic">This dashboard summarises key NHS performance indicators from Aug 2021 to Jun 2022 …</p>
+    <p class="text-muted fst-italic">Summary of key NHS performance indicators from Aug 2021 – Jun 2022 …</p>
 
     <h5>Capacity Utilisation vs Planning Limit</h5>
     <img src="Dashboard_Capacity.png" class="img-fluid rounded border mb-2" alt="Capacity Chart">
@@ -101,11 +101,11 @@
 
     <h5>Detailed Capacity Utilisation</h5>
     <img src="Dashboard_Utilization.png" class="img-fluid rounded border mb-2" alt="Utilisation Detail Chart">
-    <p class="text-muted fst-italic">Persistent over-utilisation beyond 100 % confirms …</p>
+    <p class="text-muted fst-italic">Persistent utilisation above 100 % confirms ongoing resource gaps …</p>
 
     <h5>Missed Appointments Trends</h5>
     <img src="Dashboard_Missed.png" class="img-fluid rounded border mb-2" alt="Missed Appointments Chart">
-    <p class="text-muted fst-italic">Monthly missed appointments (DNAs) ranged between 4.2 % and 5.18 % …</p>
+    <p class="text-muted fst-italic">Monthly DNA rates ranged 4.2 – 5.18 %, spiking to 1.5 M no-shows in Oct 2021 …</p>
   </div>
 </section>
 
@@ -124,14 +124,22 @@
   </div>
 </section>
 
+<!-- ===== BACK TO PORTFOLIO ===== -->
+<section class="text-center my-4">
+  <a href="index.html" class="btn btn-outline-primary">
+    &larr; Back&nbsp;to&nbsp;Portfolio
+  </a>
+</section>
+
 <!-- ================= FOOTER ================= -->
 <footer class="text-center py-3 bg-primary text-white">
   &copy; 2025 Monica Baracho
 </footer>
 
-<!---- JS –-->
+<!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>AOS.init({duration:700,offset:150,once:true});</script> -->
 </body>
 </html>
+
